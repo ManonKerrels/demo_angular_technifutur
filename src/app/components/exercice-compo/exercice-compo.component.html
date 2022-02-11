@@ -4,9 +4,11 @@
 <h3>Nouveau component</h3>
 <input type="text" [(ngModel)]="nom">
 <br>
-<button (click)="onClick()" >Cliquer</button>
-<button (click)="clear()" >Reset</button>
+<button (click)="onClick()">Cliquer</button>
+<button (click)="clear()">Reset</button>
 
-<p>Nombre de tentative de validations : {{tentValidation}} </p>
-<p>Nombre de noms validés : {{nbrValide}}</p>
-<p>Dernier nom validé : {{lastNomValide}} </p>
+<div>
+    <p>Nombre de tentative de validations : {{tentValidation}} </p>
+    <p>Nombre de noms validés : {{nbrValide}}</p>
+    <p>Dernier nom validé : {{lastNomValide}} </p>
+</div>
