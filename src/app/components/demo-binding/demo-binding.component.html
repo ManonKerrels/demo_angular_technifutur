@@ -1,0 +1,29 @@
+<h1>Le binding</h1>
+
+<h3>One-Way Binding</h3>
+<!--Façon de récupérer des éléments ts avec une double accolade-->
+
+<p>Bonjour {{nomUser}} </p>
+<p>Bonjour {{"Luc" + " Dubois"}} </p>
+<p>Bonjour {{nomUser + " Kerrels"}} </p>
+
+
+<h3>One-Way Binding d'attribut</h3>
+<!--On met des éléments comme attributs-->
+<!--On peut soit mettre entre crochet le mot [class], soit mettre entre double accolades le mot "color" pour indiquer qu'on fait référence au fichier ts-->
+
+<p [class]="color" (mouseenter)="swapColor()" >Le texte est de couleur {{ color }} </p> 
+
+<h3>Two-Way Binding</h3>
+<!--retrouver des éléments dans des input. On lui donne le nom de la variable avec laquelle il doit se connecter-->
+
+<p><span>ATTENTION :</span> IMPORT FormsModule</p>
+<select [(ngModel)]="color">
+    <option value="red">Rouge</option>
+    <option value="blue">Bleu</option>
+</select>
+
+<h3>Binding d'événement</h3>
+<!--Création d'événement hmtl comme des alert, des button, etc, et liaison à des méthodes (ou une seule) dans la classe-->
+<!--($event) permet de récupérer les informations d'un événement (car tout événement retransmet des informations)-->
+<button (click)="onClick($event)">Click me</button>
