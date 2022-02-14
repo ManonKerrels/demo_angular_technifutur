@@ -1,8 +1,8 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AccueilComponent } from './components/accueil/accueil.component';
-import { DemoBindingComponent } from './components/demo-binding/demo-binding.component';
-import { ExerciceCompoComponent } from './components/exercice-compo/exercice-compo.component';
+import { DemoBindingComponent } from './components/demo/demo-binding/demo-binding.component';
+import { ExerciceCompoComponent } from './components/exo/exercice-compo/exercice-compo.component';
 import { Page404Component } from './components/page404/page404.component';
 
 // Définition des routes à utiliser pour avoir telle ou telle page

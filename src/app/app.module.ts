@@ -4,10 +4,12 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { DemoBindingComponent } from './components/demo-binding/demo-binding.component';
-import { ExerciceCompoComponent } from './components/exercice-compo/exercice-compo.component';
+import { DemoBindingComponent } from './components/demo/demo-binding/demo-binding.component';
+import { ExerciceCompoComponent } from './components/exo/exercice-compo/exercice-compo.component';
 import { AccueilComponent } from './components/accueil/accueil.component';
 import { Page404Component } from './components/page404/page404.component';
+import { ExoComponent } from './components/exo/exo.component';
+import { DemoComponent } from './components/demo/demo.component';
 
 @NgModule({
   declarations: [
@@ -15,7 +17,9 @@ import { Page404Component } from './components/page404/page404.component';
     DemoBindingComponent,
     ExerciceCompoComponent,
     AccueilComponent,
-    Page404Component
+    Page404Component,
+    ExoComponent,
+    DemoComponent
   ],
   imports: [
     BrowserModule,
