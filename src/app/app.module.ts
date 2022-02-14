@@ -7,13 +7,15 @@ import { AppComponent } from './app.component';
 import { DemoBindingComponent } from './components/demo-binding/demo-binding.component';
 import { ExerciceCompoComponent } from './components/exercice-compo/exercice-compo.component';
 import { AccueilComponent } from './components/accueil/accueil.component';
+import { Page404Component } from './components/page404/page404.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     DemoBindingComponent,
     ExerciceCompoComponent,
-    AccueilComponent
+    AccueilComponent,
+    Page404Component
   ],
   imports: [
     BrowserModule,
