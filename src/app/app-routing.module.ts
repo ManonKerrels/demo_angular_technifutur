@@ -3,6 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { AccueilComponent } from './components/accueil/accueil.component';
 import { DemoBindingComponent } from './components/demo-binding/demo-binding.component';
 import { ExerciceCompoComponent } from './components/exercice-compo/exercice-compo.component';
+import { Page404Component } from './components/page404/page404.component';
 
 // Définition des routes à utiliser pour avoir telle ou telle page
 const routes: Routes = [
@@ -10,6 +11,8 @@ const routes: Routes = [
   { path:"accueil", component: AccueilComponent },
   { path:"demo", component: DemoBindingComponent },
   { path:"exo", component: ExerciceCompoComponent },
+  { path:"404", component: Page404Component },
+  { path:"**", redirectTo:"404" }, //** correspond à n'importe quelle url (ici non définie > l'ordre a donc une importance)
 ];
 
 @NgModule({
