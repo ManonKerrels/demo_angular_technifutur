@@ -3,14 +3,18 @@ import { CommonModule } from '@angular/common';
 import { DemoBindingComponent } from './demo-binding/demo-binding.component';
 import { FormsModule } from '@angular/forms';
 import { ExoRoutingModule } from './demo-routing.module';
-import { D2Component } from './d2/d2.component';
+import { DemoPipeComponent } from './demo-pipe/demo-pipe.component';
+import { NavComponent } from './nav/nav.component';
+import { DemoComponent } from './demo.component';
 
 
 
 @NgModule({
   declarations: [
     DemoBindingComponent,
-    D2Component
+    DemoPipeComponent,
+    NavComponent,
+    DemoComponent
   ],
   imports: [
     CommonModule,
@@ -18,4 +22,4 @@ import { D2Component } from './d2/d2.component';
     ExoRoutingModule,
   ]
 })
-export class ExoModule { }
+export class DemoModule { }

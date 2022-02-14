@@ -1,11 +1,15 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { Ex2Component } from './ex2/ex2.component';
 import { ExerciceCompoComponent } from './exercice-compo/exercice-compo.component';
+import { ExoComponent } from './exo.component';
 
 const routes: Routes = [
-    { path:"binding", component:ExerciceCompoComponent }
+  { path:"", component:ExoComponent, children:[
+    { path: 'binding', component: ExerciceCompoComponent },
+    { path: 'ex2', component: Ex2Component },
+  ] }
 ];
-
 @NgModule({
   imports: [RouterModule.forChild(routes)],
   exports: [RouterModule]

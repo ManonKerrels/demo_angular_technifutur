@@ -8,18 +8,12 @@ import { DemoBindingComponent } from './components/demo/demo-binding/demo-bindin
 import { ExerciceCompoComponent } from './components/exo/exercice-compo/exercice-compo.component';
 import { AccueilComponent } from './components/accueil/accueil.component';
 import { Page404Component } from './components/page404/page404.component';
-import { ExoComponent } from './components/exo/exo.component';
-import { DemoComponent } from './components/demo/demo.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    DemoBindingComponent,
-    ExerciceCompoComponent,
     AccueilComponent,
-    Page404Component,
-    ExoComponent,
-    DemoComponent
+    Page404Component
   ],
   imports: [
     BrowserModule,
