@@ -5,6 +5,7 @@ import { FormsModule } from '@angular/forms';
 import { ExoRoutingModule } from './exo-routing.module';
 import { Ex2Component } from './ex2/ex2.component';
 import { ExoComponent } from './exo.component';
+import { ChronoComponent } from './chrono/chrono.component';
 
 
 
@@ -12,7 +13,8 @@ import { ExoComponent } from './exo.component';
   declarations: [
     ExerciceCompoComponent,
     Ex2Component,
-    ExoComponent
+    ExoComponent,
+    ChronoComponent
   ],
   imports: [
     CommonModule,
