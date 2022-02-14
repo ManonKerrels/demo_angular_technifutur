@@ -15,7 +15,7 @@ import { D2Component } from './d2/d2.component';
   imports: [
     CommonModule,
     FormsModule,
-    ExoRoutingModule
+    ExoRoutingModule,
   ]
 })
 export class ExoModule { }
