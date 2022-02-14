@@ -6,6 +6,8 @@ import { ExoRoutingModule } from './demo-routing.module';
 import { DemoPipeComponent } from './demo-pipe/demo-pipe.component';
 import { NavComponent } from './nav/nav.component';
 import { DemoComponent } from './demo.component';
+import { VoitureFormatPipe } from 'src/app/shared/pipes/voiture-format.pipe';
+import { AppModule } from 'src/app/app.module';
 
 
 
@@ -20,6 +22,7 @@ import { DemoComponent } from './demo.component';
     CommonModule,
     FormsModule,
     ExoRoutingModule,
+    AppModule
   ]
 })
 export class DemoModule { }
