@@ -8,6 +8,7 @@ import { NavComponent } from './nav/nav.component';
 import { DemoComponent } from './demo.component';
 import { VoitureFormatPipe } from 'src/app/shared/pipes/voiture-format.pipe';
 import { AppModule } from 'src/app/app.module';
+import { SharedModule } from 'src/app/shared/shared.module';
 
 
 
@@ -22,7 +23,7 @@ import { AppModule } from 'src/app/app.module';
     CommonModule,
     FormsModule,
     ExoRoutingModule,
-    AppModule
+    SharedModule
   ]
 })
 export class DemoModule { }

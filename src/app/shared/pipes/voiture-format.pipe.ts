@@ -6,11 +6,13 @@ import { Voiture } from '../../models/voiture.model';
 })
 export class VoitureFormatPipe implements PipeTransform {
 
-  transform(voiture: Voiture): string {
+  transform(voiture: Voiture, include_details?: boolean): string { //Si on met ?, on considère que les détails sont undefined
     return "Marque : "+ voiture.marque+ 
     " | Modèle : "+ voiture.modele + 
-    "| Nombre de portes : "+ voiture.nbrPorte + 
-    "| Puissance : "+ voiture.puissance;
+    (include_details ?
+      " | Nombre de portes : "+ voiture.nbrPorte + 
+      " | Puissance : "+ voiture.puissance+ " ch ": '');
+    
   }
 
 }

@@ -14,8 +14,7 @@ import { VoitureFormatPipe } from './shared/pipes/voiture-format.pipe';
   declarations: [
     AppComponent,
     AccueilComponent,
-    Page404Component,
-    VoitureFormatPipe
+    Page404Component
   ],
   imports: [
     BrowserModule,
@@ -23,8 +22,7 @@ import { VoitureFormatPipe } from './shared/pipes/voiture-format.pipe';
     FormsModule
   ],
   exports: [
-    AppComponent,
-    VoitureFormatPipe
+    AppComponent
   ],
   providers: [],
   bootstrap: [AppComponent]

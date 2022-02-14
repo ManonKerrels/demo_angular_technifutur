@@ -7,4 +7,5 @@
 <p>Date: {{ date | date:'dd-MM-YYYY' }} </p>
 
 
+<p> {{ voiture | voitureFormat: (voiture.puissance >= 60) }} </p> <!-- On n'est pas obligé de se limiter à un true/false -->
 <p> {{ voiture | voitureFormat }} </p>
