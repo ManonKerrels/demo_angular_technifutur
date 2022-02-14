@@ -1,5 +1,15 @@
 <h1>Bienvenue sur mon site: {{ title + " le titre" }} {{1+1}} </h1> <!--les accolades servent à concaténer avec d'autres éléments à ajouter-->
 
-<!-- <app-demo-binding></app-demo-binding> -->
+<!-- Manière de faire à l'html -->
+<!-- <a href="http://localhost:4200/demo">Demo</a>
+<a href="http://localhost:4200/exo">Exercice</a> -->
 
-<app-exercice-compo></app-exercice-compo>
+<nav>
+    <a routerLink = "/demo">Demo</a><br>
+    <a routerLink = "/exo">Exercice</a><br>
+</nav>
+
+<div>
+    <router-outlet></router-outlet>
+</div>
+<!-- Selon l'url, on charge la partie qu'on préfère: /demo ou /exo -->
