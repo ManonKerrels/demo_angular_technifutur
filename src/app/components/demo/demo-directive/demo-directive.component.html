@@ -1,5 +1,8 @@
 <h3>Les directives</h3>
 
+<p>Comportements généralisés: définir une directive qui va être répétée</p>
+
+
 <h4>Component directives</h4>
 
     <h5>ngStyle</h5>
@@ -33,7 +36,7 @@
     <h5>ngIf</h5>
 
         <button (click)="toggleDisplay()"> {{ displayed ? 'cacher' : 'afficher' }} </button>
-        <div *ngIf="displayed" > <!--Principale différence avec [hidden]= ajoute/retire la balise du code de la structure sur base d'un booléen-->
+        <div *ngIf="displayed; else div_container" > <!--Principale différence avec [hidden]= ajoute/retire la balise du code de la structure sur base d'un booléen-->
             <p>Message secret</p>
         </div>
 
@@ -41,13 +44,30 @@
             <p>Oh ben...</p>
         </div>
 
+        <p>-----------------------------------------------------</p>
+
+        <ng-template #div_container> <!--Possibilité d'afficher autre chose lorsque que le message caché n'est pas là-->
+            <div>
+                <p>Sinon</p>
+            </div>
+        </ng-template>
+
+
+
     <h5>ngFor</h5> <!--Répète un certain nombre de fois des éléments-->
         <ul>
-            <li *ngFor="let fruit of tabFruit"> {{ fruit }} </li>
+            <li *ngFor="let fruit of tabFruit; let i = index"> {{ i }} - {{ fruit }} </li>
         </ul>
-
-
 
     <h5>ngSwitch</h5>
 
-<h4>Custom directives</h4>
+        <div [ngSwitch]="color" >
+            <div *ngSwitchCase="'black'" >La couleur est noire</div>
+            <div *ngSwitchCase="'white'" >La couleur est blanche</div>
+            <div *ngSwitchDefault>Ce n'est ni l'un ni l'autre</div>
+        </div>
+
+<h4>Custom directives</h4> 
+
+
+

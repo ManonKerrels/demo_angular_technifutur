@@ -7,6 +7,7 @@ import { Ex2Component } from './ex2/ex2.component';
 import { ExoComponent } from './exo.component';
 import { ChronoComponent } from './chrono/chrono.component';
 import { SharedModule } from 'src/app/shared/shared.module';
+import { ExoProduitComponent } from './exo-produit/exo-produit.component';
 
 
 
@@ -15,7 +16,8 @@ import { SharedModule } from 'src/app/shared/shared.module';
     ExerciceCompoComponent,
     Ex2Component,
     ExoComponent,
-    ChronoComponent
+    ChronoComponent,
+    ExoProduitComponent
   ],
   imports: [
     CommonModule,
