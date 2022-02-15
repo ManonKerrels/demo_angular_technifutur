@@ -1,3 +1,14 @@
 <h3>Produits</h3>
 
+<ol>
+    <li *ngFor="let produit of tabProduit"> 
+        Marque = {{ produit.marque }} |
+        Modèle = {{ produit.modele }} |
+        Stock = {{ produit.stock }} |
+        Prix = {{ produit.prix }} euros
+    </li>
+</ol>
 
+<p>Produit 1 = <button (click)="toggleDisplay1($event)">{{ displayed ? 'Pas de stock' : 'En vente'}}</button></p>
+<p>Produit 2 = <button (click)="toggleDisplay2($event)">{{ displayed2 ? 'Pas de stock' : 'En vente'}}</button></p>
+<p>Produit 2 = <button (click)="toggleDisplay3($event)">{{ displayed3 ? 'Pas de stock' : 'En vente'}}</button></p>
