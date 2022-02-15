@@ -6,9 +6,8 @@ import { ExoRoutingModule } from './demo-routing.module';
 import { DemoPipeComponent } from './demo-pipe/demo-pipe.component';
 import { NavComponent } from './nav/nav.component';
 import { DemoComponent } from './demo.component';
-import { VoitureFormatPipe } from 'src/app/shared/pipes/voiture-format.pipe';
-import { AppModule } from 'src/app/app.module';
 import { SharedModule } from 'src/app/shared/shared.module';
+import { DemoDirectiveComponent } from './demo-directive/demo-directive.component';
 
 
 
@@ -17,7 +16,8 @@ import { SharedModule } from 'src/app/shared/shared.module';
     DemoBindingComponent,
     DemoPipeComponent,
     NavComponent,
-    DemoComponent
+    DemoComponent,
+    DemoDirectiveComponent
   ],
   imports: [
     CommonModule,

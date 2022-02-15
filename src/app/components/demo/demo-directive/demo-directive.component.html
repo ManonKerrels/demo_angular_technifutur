@@ -1,0 +1,41 @@
+<h3>Les directives</h3>
+
+<h4>Component directives</h4>
+
+    <h5>ngStyle</h5>
+        <div>
+            <p [ngStyle]=" {'color':color, 'background-color':bgColor}" >Ceci est une petite testouille</p>
+        </div>
+        <div>
+            <input type="radio" name="color" value="black" [(ngModel)]="color">Noir
+            <input type="radio" name="color" value="white" [(ngModel)]="color">Blanc
+        </div>
+        <div>
+            <input type="radio" name="bg-color" value="red" [(ngModel)]="bgColor">Rouge
+            <input type="radio" name="bg-color" value="blue" [(ngModel)]="bgColor">Bleu
+        </div>
+        
+
+    <h5>ngClass</h5> <!--On applique une classe sur une condition est vraie-->
+    <div>
+        <!-- <p [class]="numberInput < 0 ? 'negative' : ''">Ceci est une petite testouille</p> -> autre manière de fonctionner-->
+        <p [class]=" {'negative': numberInput} ">Ceci est une petite testouille</p>
+    </div>
+
+    <input type="number" [(ngModel)]="numberInput">
+
+
+
+
+    <h5>ngModel</h5>
+
+
+<h4>Structural directives</h4>
+
+    <h5>ngIf</h5>
+
+    <h5>ngFor</h5>
+
+    <h5>ngSwitch</h5>
+
+<h4>Custom directives</h4>

@@ -8,13 +8,12 @@ import { DemoBindingComponent } from './components/demo/demo-binding/demo-bindin
 import { ExerciceCompoComponent } from './components/exo/exercice-compo/exercice-compo.component';
 import { AccueilComponent } from './components/accueil/accueil.component';
 import { Page404Component } from './components/page404/page404.component';
-import { VoitureFormatPipe } from './shared/pipes/voiture-format.pipe';
 
 @NgModule({
   declarations: [
     AppComponent,
     AccueilComponent,
-    Page404Component
+    Page404Component,
   ],
   imports: [
     BrowserModule,
