@@ -47,7 +47,7 @@ export class ChronoComponent implements OnInit {
       if(this.chronoFormat == (this.minute + 'm ' + this.seconde + 's') ){
         this.chronoFormat = (this.minute + ' minutes ' + this.seconde + ' secondes')
       }
-      this.chronoFormat = this.chronoFormat === (this.minute + ' minutes ' + this.seconde + ' secondes') ? (this.minute + 'm ' + this.seconde + 's') : (this.minute + ' minutes ' + this.seconde + ' secondes');
+      // this.chronoFormat = this.chronoFormat === (this.minute + ' minutes ' + this.seconde + ' secondes') ? (this.minute + 'm ' + this.seconde + 's') : (this.minute + ' minutes ' + this.seconde + ' secondes');
   }
 
 }
