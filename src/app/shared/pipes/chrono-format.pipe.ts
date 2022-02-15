@@ -2,8 +2,7 @@ import { Pipe, PipeTransform } from '@angular/core';
 import { Chrono } from 'src/app/models/chrono.model';
 
 @Pipe({
-  name: 'chronoFormat',
-  pure: false
+  name: 'chronoFormat'
 })
 export class ChronoFormatPipe implements PipeTransform {
 

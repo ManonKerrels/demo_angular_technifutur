@@ -6,6 +6,7 @@ import { ExoRoutingModule } from './exo-routing.module';
 import { Ex2Component } from './ex2/ex2.component';
 import { ExoComponent } from './exo.component';
 import { ChronoComponent } from './chrono/chrono.component';
+import { SharedModule } from 'src/app/shared/shared.module';
 
 
 
@@ -19,7 +20,8 @@ import { ChronoComponent } from './chrono/chrono.component';
   imports: [
     CommonModule,
     FormsModule,
-    ExoRoutingModule
+    ExoRoutingModule,
+    SharedModule
   ]
 })
 export class ExoModule { }

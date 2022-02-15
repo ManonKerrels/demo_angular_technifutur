@@ -10,6 +10,6 @@ import { ChronoFormatPipe } from './pipes/chrono-format.pipe';
   imports: [
     CommonModule
   ],
-  exports: [ VoitureFormatPipe ]
+  exports: [ VoitureFormatPipe, ChronoFormatPipe ]
 })
 export class SharedModule { }

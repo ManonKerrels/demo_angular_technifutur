@@ -1,6 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { timeout } from 'rxjs';
-import { Chrono } from 'src/app/models/chrono.model';
 
 @Component({
   selector: 'app-chrono',
@@ -12,8 +10,9 @@ export class ChronoComponent implements OnInit {
   
   minute: number = 0;
   seconde: number = 0;
-  date: string = "";
-  freeze = setInterval(() => (this.minute + this.seconde));
+  chronoFormat: string = (this.minute +' : '+ this.seconde);
+  freeze = setInterval(() => (this.chronoFormat));
+  
 
   constructor() { }
 
@@ -44,7 +43,11 @@ export class ChronoComponent implements OnInit {
   }
 
   format(){
-    this.date = this.date === (this.minute +':'+ this.seconde) ? (this.minute + 'm' + this.seconde + 's') : (this.minute +':'+ this.seconde);
+      this.chronoFormat = this.chronoFormat === (this.minute +' : '+ this.seconde) ? (this.minute + 'm ' + this.seconde + 's') : (this.minute +' : '+ this.seconde);
+      if(this.chronoFormat == (this.minute + 'm ' + this.seconde + 's') ){
+        this.chronoFormat = (this.minute + ' minutes ' + this.seconde + ' secondes')
+      }
+      this.chronoFormat = this.chronoFormat === (this.minute + ' minutes ' + this.seconde + ' secondes') ? (this.minute + 'm ' + this.seconde + 's') : (this.minute + ' minutes ' + this.seconde + ' secondes');
   }
 
 }
