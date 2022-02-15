@@ -19,22 +19,34 @@
     <h5>ngClass</h5> <!--On applique une classe sur une condition est vraie-->
     <div>
         <!-- <p [class]="numberInput < 0 ? 'negative' : ''">Ceci est une petite testouille</p> -> autre manière de fonctionner-->
-        <p [class]=" {'negative': numberInput} ">Ceci est une petite testouille</p>
+        <p [class]=" {'negative': numberInput, 'too-big': numberInput >= 10} ">Ceci est une petite testouille</p>
     </div>
 
     <input type="number" [(ngModel)]="numberInput">
 
-
-
-
     <h5>ngModel</h5>
+        <p>Bah c'est connu hein patate...</p>
 
 
 <h4>Structural directives</h4>
 
     <h5>ngIf</h5>
 
-    <h5>ngFor</h5>
+        <button (click)="toggleDisplay()"> {{ displayed ? 'cacher' : 'afficher' }} </button>
+        <div *ngIf="displayed" > <!--Principale différence avec [hidden]= ajoute/retire la balise du code de la structure sur base d'un booléen-->
+            <p>Message secret</p>
+        </div>
+
+        <div [hidden]="!displayed">
+            <p>Oh ben...</p>
+        </div>
+
+    <h5>ngFor</h5> <!--Répète un certain nombre de fois des éléments-->
+        <ul>
+            <li *ngFor="let fruit of tabFruit"> {{ fruit }} </li>
+        </ul>
+
+
 
     <h5>ngSwitch</h5>
 

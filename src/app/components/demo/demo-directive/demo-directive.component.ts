@@ -12,9 +12,21 @@ export class DemoDirectiveComponent implements OnInit {
 
   numberInput: number = 0;
 
+  displayed: boolean = false;
+
+  tabFruit = [
+    "pomme",
+    "banane",
+    "cerise"
+  ]
+
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  toggleDisplay(){
+    this.displayed = !this.displayed;
   }
 
 }
