@@ -8,6 +8,9 @@ import { ExoComponent } from './exo.component';
 import { ChronoComponent } from './chrono/chrono.component';
 import { SharedModule } from 'src/app/shared/shared.module';
 import { ExoProduitComponent } from './exo-produit/exo-produit.component';
+import { ParentCommuComponent } from './parent-commu/parent-commu.component';
+import { Enfant1CommuComponent } from './enfant1-commu/enfant1-commu.component';
+import { Enfant2CommuComponent } from './enfant2-commu/enfant2-commu.component';
 
 
 
@@ -17,7 +20,10 @@ import { ExoProduitComponent } from './exo-produit/exo-produit.component';
     Ex2Component,
     ExoComponent,
     ChronoComponent,
-    ExoProduitComponent
+    ExoProduitComponent,
+    ParentCommuComponent,
+    Enfant1CommuComponent,
+    Enfant2CommuComponent
   ],
   imports: [
     CommonModule,

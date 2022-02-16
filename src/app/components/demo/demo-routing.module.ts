@@ -1,7 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { DemoBindingComponent } from './demo-binding/demo-binding.component';
-import { DemoCommuEnfantComponent } from './demo-commu-enfant/demo-commu-enfant.component';
 import { DemoCommuComponent } from './demo-commu/demo-commu.component';
 import { DemoDirectiveComponent } from './demo-directive/demo-directive.component';
 import { DemoPipeComponent } from './demo-pipe/demo-pipe.component';
