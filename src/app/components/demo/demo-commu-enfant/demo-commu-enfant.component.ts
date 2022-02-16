@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 
 @Component({
   selector: 'app-demo-commu-enfant',
@@ -7,11 +7,21 @@ import { Component, Input, OnInit } from '@angular/core';
 })
 export class DemoCommuEnfantComponent implements OnInit {
 
+  @Input('info-get')
   infoRecup: string = "";
+  
+  color: string = 'black';
+
+  @Output('change-color')
+  emitter = new EventEmitter<string>();
 
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  onChange(){
+    this.emitter.emit(this.color);
   }
 
 }

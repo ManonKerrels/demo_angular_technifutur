@@ -7,11 +7,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DemoCommuComponent implements OnInit {
 
-  info = "info";
+  info = 'info';
+  colorParent = 'black';
 
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  onColorChange(color: string){
+    this.colorParent = color;
   }
 
 }
