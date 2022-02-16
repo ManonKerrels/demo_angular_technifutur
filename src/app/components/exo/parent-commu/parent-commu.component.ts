@@ -7,9 +7,15 @@ import { Component, Input, OnInit } from '@angular/core';
 })
 export class ParentCommuComponent implements OnInit {
 
+  redAbove = true;
+
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  onClickedSquare(){
+    this.redAbove = !this.redAbove;
   }
 
 }

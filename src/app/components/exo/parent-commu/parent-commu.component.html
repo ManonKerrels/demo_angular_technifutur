@@ -4,7 +4,7 @@
 
     <p>Nous voici dans le cadre parent</p>
 
-    <app-enfant1-commu></app-enfant1-commu>
+    <app-enfant1-commu (clicked-square)="onClickedSquare()" [isRedAbove]="redAbove" ></app-enfant1-commu>
     <app-enfant2-commu></app-enfant2-commu>
 
 </div>

@@ -1,4 +1,4 @@
-import { Component, Input, OnInit, Output } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 
 @Component({
   selector: 'app-enfant1-commu',
@@ -7,9 +7,19 @@ import { Component, Input, OnInit, Output } from '@angular/core';
 })
 export class Enfant1CommuComponent implements OnInit {
 
+  @Output('clicked-square')
+  emitter = new EventEmitter();
+
+  @Input()
+  isRedAbove: boolean = true;
+
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  clickedSquare(){
+    this.emitter.emit();
   }
 
 }

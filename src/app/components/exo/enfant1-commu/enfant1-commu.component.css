@@ -1,5 +1,7 @@
-#cadre-enfant1 {
+.cadre-enfant1 {
     border: dashed blue 2px;
+    width: 300px;
+    height: 300px;
     text-align: center;
     background-color: aquamarine;
 }
