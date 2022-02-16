@@ -11,6 +11,7 @@ export class ExoProduitComponent implements OnInit {
     throw new Error('Method not implemented.');
   }
   
+  hiddePasVente: boolean = false;
 
   tabProduit: Produit[] = [
     { id: 1, marque: "Café", modele: "La Caféière", stock: 20, prix: 3, en_vente: true },
@@ -23,7 +24,13 @@ export class ExoProduitComponent implements OnInit {
   }
 
   supprimer(i: number){
-    delete this.tabProduit[i]
+    if(confirm('Êtes-vous certain(e) de vous ?')){
+      delete this.tabProduit[i]
+    } 
+  }
+
+  showNoSale(i: number){
+    this.hiddePasVente = !this.hiddePasVente;
   }
 
 

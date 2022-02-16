@@ -1,15 +1,19 @@
 <h3>Produits</h3>
 
 <span>
+    <input type="checkbox" id="show-no-sale" [(ngModel)]="showNoSale" >
+    <label for="show-no-sale"> {{ hiddePasVente ? 'Afficher tout' : 'Cacher les non en vente' }} </label>
+
     <div class="tab" *ngFor="let produit of tabProduit; let i = index"> 
         <span [ngStyle]=" { 'background-color': produit.en_vente ? 'white' : 'red' } ">
-            Id = {{ produit.id }} |
-            Marque = {{ produit.marque }} |
+            <span> Id = {{ produit.id }} |</span> 
+            <span> Marque = {{ produit.marque }} |</span> 
             Modèle = {{ produit.modele }} |
-            Stock = {{ produit.stock }} |
+            <span [ngClass]="{'few_stock' : produit.stock < 5, 'much_stock': produit.stock > 10 }" > Stock = {{ produit.stock <= 0 ? 'indisponible' : produit.stock }} |</span> 
             Prix = {{ produit.prix }} euros
             <button (click)="enVente(i)"> {{ produit.en_vente ? 'En vente' : 'Plus de stock' }} </button>
             <button (click)="supprimer(i)" >Supprimer</button>
+
         </span>
     </div>
 </span>
