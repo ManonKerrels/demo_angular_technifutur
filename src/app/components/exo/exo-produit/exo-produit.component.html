@@ -9,6 +9,7 @@
             Stock = {{ produit.stock }} |
             Prix = {{ produit.prix }} euros
             <button (click)="enVente(i)"> {{ produit.en_vente ? 'En vente' : 'Plus de stock' }} </button>
+            <button (click)="supprimer(i)" >Supprimer</button>
         </span>
     </div>
 </span>

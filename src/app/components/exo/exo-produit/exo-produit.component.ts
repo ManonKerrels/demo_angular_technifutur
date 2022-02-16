@@ -22,5 +22,9 @@ export class ExoProduitComponent implements OnInit {
     this.tabProduit[i].en_vente = !this.tabProduit[i].en_vente;
   }
 
+  supprimer(i: number){
+    delete this.tabProduit[i]
+  }
+
 
 }
