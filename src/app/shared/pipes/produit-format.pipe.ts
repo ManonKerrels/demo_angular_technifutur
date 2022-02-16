@@ -6,12 +6,14 @@ import { Produit } from 'src/app/models/produit.model';
 })
 export class ProduitFormatPipe implements PipeTransform {
 
-  transform(value: Produit, include_details?: string): string {
+  transform(value: Produit, include_details?: boolean): string {
     return "Marque : " + value.marque +
+    "Modèle : " + value.modele +
     "Stock : " + value.stock +
-    "Prix : " + value.prix +
-    "En vente : " + value.en_vente;
-    (include_details ? "Modèle : " + value.modele : '');
+    "Prix : " + value.prix;
+    (include_details ? 
+      "En vente : " + value.en_vente: false +
+      "Id : " + value.id);
   }
 
 }

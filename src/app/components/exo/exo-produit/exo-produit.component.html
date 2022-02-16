@@ -1,14 +1,25 @@
 <h3>Produits</h3>
 
-<ol>
-    <li *ngFor="let produit of tabProduit"> 
-        Marque = {{ produit.marque }} |
-        Modèle = {{ produit.modele }} |
-        Stock = {{ produit.stock }} |
-        Prix = {{ produit.prix }} euros
-    </li>
-</ol>
+<span>
+    <div class="tab" *ngFor="let produit of tabProduit; let i = index"> 
+        <span [ngStyle]=" { 'background-color': produit.en_vente ? 'white' : 'red' } ">
+            Id = {{ produit.id }} |
+            Marque = {{ produit.marque }} |
+            Modèle = {{ produit.modele }} |
+            Stock = {{ produit.stock }} |
+            Prix = {{ produit.prix }} euros
+            <button (click)="enVente(i)" > Merde </button>
+        </span>
+    </div>
+</span>
 
-<p>Produit 1 = <button (click)="toggleDisplay1($event)">{{ displayed ? 'Pas de stock' : 'En vente'}}</button></p>
-<p>Produit 2 = <button (click)="toggleDisplay2($event)">{{ displayed2 ? 'Pas de stock' : 'En vente'}}</button></p>
-<p>Produit 2 = <button (click)="toggleDisplay3($event)">{{ displayed3 ? 'Pas de stock' : 'En vente'}}</button></p>
+<!-- <div >
+    <p>Veuillez choisir le produit à sélectionner : </p>
+    <select [(ngModel)]="select"; let i = index >
+        <option value="produit1">Produit 1</option>
+        <option value="produit2">Produit 2</option>
+        <option value="produit3">Produit 3</option>
+    </select>
+    <button (click)="onClick(id)">Sélectionner</button>
+</div> -->
+
