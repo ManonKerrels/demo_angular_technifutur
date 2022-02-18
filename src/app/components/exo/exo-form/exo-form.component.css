@@ -2,3 +2,19 @@ h3 {
     color: burlywood;
     text-decoration-line: underline;
 }
+
+#formulaire.ng-pristine {
+    background-color: lightgreen;
+}
+
+#formulaire.ng-touched {
+    background-color: white;
+}
+
+#input-nom.ng-touched {
+    border: solid 2px blue;
+}
+
+#input-prix.ng-touched {
+    border: solid 2px blue;
+}

@@ -1,1 +1,19 @@
 <h3>Exercice de formulaire</h3>
+
+<h2> Produits à encoder </h2>
+
+<form id="formulaire" [formGroup]="form" (ngSubmit)="onSubmit()" >
+
+    <div>
+        <label for="input-nom"> Nom </label>
+        <input type="text" id="input-nom" formControlName="nom">
+    </div>
+    <div>
+        <label for="input-prix"> Prix </label>
+        <input type="number" id="input-prix" formControlName="prix">
+    </div>
+
+    <button type="submit" > Envoyer </button>
+
+
+</form>
