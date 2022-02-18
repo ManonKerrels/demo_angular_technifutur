@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, ElementRef, EventEmitter, Input, OnInit, Output } from '@angular/core';
 
 @Component({
   selector: 'app-demo-directive',
@@ -7,8 +7,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DemoDirectiveComponent implements OnInit {
 
+  @Input('appChildText')
+  texte: string = "Salut";
+
   color: string = 'black';
   bgColor: string = 'red';
+
+  nbrEnfant: number = 0;
 
   numberInput: number = 0;
 
@@ -20,13 +25,22 @@ export class DemoDirectiveComponent implements OnInit {
     "cerise"
   ]
 
-  constructor() { }
+  constructor(private element: ElementRef) { }
 
   ngOnInit(): void {
+
   }
 
   toggleDisplay(){
     this.displayed = !this.displayed;
+  }
+
+  onColorSwapped(color: string){
+    // console.log(color);
+  }
+
+  countChildren(){
+    this.nbrEnfant ++;
   }
 
 }
