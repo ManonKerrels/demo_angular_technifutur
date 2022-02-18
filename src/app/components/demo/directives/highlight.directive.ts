@@ -5,11 +5,14 @@ import { Directive, ElementRef, HostListener, Input } from '@angular/core';
 })
 export class HighlightDirective {
 
+  //crée un paramètre, un nom de directive sur un attribut + association de valeur en un seul coup (>< Output = crée un événement)
   @Input('appHighlight')
   color: string = 'yellow';
 
   @Input('black-text')
   black: boolean = true;
+
+
 
   constructor(private element: ElementRef) {
     console.log(this.color);
