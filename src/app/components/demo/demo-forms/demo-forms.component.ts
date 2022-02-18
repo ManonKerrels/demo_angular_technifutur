@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormControl, FormGroup } from '@angular/forms';
 
 @Component({
   selector: 'app-demo-forms',
@@ -7,9 +8,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DemoFormsComponent implements OnInit {
 
+  form = new FormGroup({
+    'nom': new FormControl(),
+    'age': new FormControl() 
+  });
+
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  onSubmit(){
+    console.log(this.form);
   }
 
 }

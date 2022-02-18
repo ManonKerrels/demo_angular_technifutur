@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { DemoBindingComponent } from './demo-binding/demo-binding.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ExoRoutingModule } from './demo-routing.module';
 import { DemoPipeComponent } from './demo-pipe/demo-pipe.component';
 import { NavComponent } from './nav/nav.component';
@@ -35,7 +35,8 @@ import { DemoFormsComponent } from './demo-forms/demo-forms.component';
     CommonModule,
     FormsModule,
     ExoRoutingModule,
-    SharedModule
+    SharedModule,
+    ReactiveFormsModule
   ]
 })
 export class DemoModule { }
