@@ -14,3 +14,9 @@ h3 {
 input.ng-dirty {
     border: solid 2px blue;
 }
+
+/*
+pristine vs dirty => modification
+untouched / touched => click
+valid / invalid => validité
+*/
