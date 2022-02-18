@@ -11,6 +11,7 @@ import { ExoProduitComponent } from './exo-produit/exo-produit.component';
 import { ParentCommuComponent } from './parent-commu/parent-commu.component';
 import { Enfant1CommuComponent } from './enfant1-commu/enfant1-commu.component';
 import { Enfant2CommuComponent } from './enfant2-commu/enfant2-commu.component';
+import { ExoFormComponent } from './exo-form/exo-form.component';
 
 
 
@@ -23,7 +24,8 @@ import { Enfant2CommuComponent } from './enfant2-commu/enfant2-commu.component';
     ExoProduitComponent,
     ParentCommuComponent,
     Enfant1CommuComponent,
-    Enfant2CommuComponent
+    Enfant2CommuComponent,
+    ExoFormComponent
   ],
   imports: [
     CommonModule,
