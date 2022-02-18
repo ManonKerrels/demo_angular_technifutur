@@ -13,6 +13,7 @@ import { DemoCommuComponent } from './demo-commu/demo-commu.component';
 import { DemoCommuEnfantComponent } from './demo-commu-enfant/demo-commu-enfant.component';
 import { GreenBgDirective } from './directives/green-bg.directive';
 import { ChildTextDirective } from './directives/child-text.directive';
+import { DemoFormsComponent } from './demo-forms/demo-forms.component';
 
 
 
@@ -27,7 +28,8 @@ import { ChildTextDirective } from './directives/child-text.directive';
     DemoCommuComponent,
     DemoCommuEnfantComponent,
     GreenBgDirective,
-    ChildTextDirective
+    ChildTextDirective,
+    DemoFormsComponent
   ],
   imports: [
     CommonModule,
