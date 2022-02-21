@@ -7,6 +7,7 @@ import { ExoFormComponent } from './exo-form/exo-form.component';
 import { ExoProduitComponent } from './exo-produit/exo-produit.component';
 import { ExoComponent } from './exo.component';
 import { ParentCommuComponent } from './parent-commu/parent-commu.component';
+import { Tp2Component } from './tp2/tp2.component';
 
 const routes: Routes = [
   { path:"", component:ExoComponent, children:[
@@ -15,7 +16,8 @@ const routes: Routes = [
     { path:'chrono', component:ChronoComponent },
     { path: 'produit', component: ExoProduitComponent },
     { path:'parent', component: ParentCommuComponent },
-    { path:'exoForm', component: ExoFormComponent }
+    { path:'exoForm', component: ExoFormComponent },
+    { path:'tp2', component: Tp2Component }
   ] }
 ];
 @NgModule({
