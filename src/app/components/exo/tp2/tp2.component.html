@@ -32,14 +32,14 @@
 <div>
     <table class="tab">
         <tr class="ligne">
-            <td class="case">Couleur 1</td>
-            <td class="case">Couleur 2</td>
-            <td class="case">Couleur 3</td>
-            <td class="case">Couleur 4</td>
+            <td [ngStyle]="{'background-color': color1}">Couleur 1</td>
+            <td [ngStyle]="{'background-color': color2}">Couleur 2</td>
+            <td [ngStyle]="{'background-color': color3}">Couleur 3</td>
+            <td [ngStyle]="{'background-color': color4}">Couleur 4</td>
         </tr>
         <tr class="ligne">
             <td class="case">
-                <select name="color" id="color">
+                <select [(ngModel)]="color1">
                     <option value="green">Vert</option>
                     <option value="blue">Bleu</option>
                     <option value="red">Rouge</option>
@@ -50,7 +50,7 @@
                 </select>
             </td>
             <td class="case">
-                <select name="color" id="color">
+                <select [(ngModel)]="color2">
                     <option value="green">Vert</option>
                     <option value="blue">Bleu</option>
                     <option value="red">Rouge</option>
@@ -61,7 +61,7 @@
                 </select>
             </td>
             <td class="case">
-                <select name="color" id="color">
+                <select [(ngModel)]="color3">
                     <option value="green">Vert</option>
                     <option value="blue">Bleu</option>
                     <option value="red">Rouge</option>
@@ -72,7 +72,7 @@
                 </select>
             </td>
             <td class="case">
-                <select name="color" id="color">
+                <select [(ngModel)]="color4">
                     <option value="green">Vert</option>
                     <option value="blue">Bleu</option>
                     <option value="red">Rouge</option>

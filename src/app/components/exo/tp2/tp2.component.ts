@@ -7,7 +7,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class Tp2Component implements OnInit {
 
-  color: string = "Vert";
+  color1: string = "green";
+  color2: string = "green";
+  color3: string = "green";
+  color4: string = "green";
 
   constructor() { }
 
