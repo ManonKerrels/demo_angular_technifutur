@@ -1,0 +1,22 @@
+h3 {
+    color: burlywood;
+    text-decoration-line: underline;
+}
+
+#formulaire.ng-pristine {
+    background-color: lightgreen;
+}
+
+#formulaire.ng-touched {
+    background-color: white;
+}
+
+input.ng-dirty {
+    border: solid 2px blue;
+}
+
+/*
+pristine vs dirty => modification
+untouched / touched => click
+valid / invalid => validité
+*/

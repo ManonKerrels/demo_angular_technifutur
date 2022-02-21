@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { DemoBindingComponent } from './demo-binding/demo-binding.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ExoRoutingModule } from './demo-routing.module';
 import { DemoPipeComponent } from './demo-pipe/demo-pipe.component';
 import { NavComponent } from './nav/nav.component';
@@ -11,6 +11,9 @@ import { DemoDirectiveComponent } from './demo-directive/demo-directive.componen
 import { HighlightDirective } from './directives/highlight.directive';
 import { DemoCommuComponent } from './demo-commu/demo-commu.component';
 import { DemoCommuEnfantComponent } from './demo-commu-enfant/demo-commu-enfant.component';
+import { GreenBgDirective } from './directives/green-bg.directive';
+import { ChildTextDirective } from './directives/child-text.directive';
+import { DemoFormsComponent } from './demo-forms/demo-forms.component';
 
 
 
@@ -23,13 +26,17 @@ import { DemoCommuEnfantComponent } from './demo-commu-enfant/demo-commu-enfant.
     DemoDirectiveComponent,
     HighlightDirective,
     DemoCommuComponent,
-    DemoCommuEnfantComponent
+    DemoCommuEnfantComponent,
+    GreenBgDirective,
+    ChildTextDirective,
+    DemoFormsComponent
   ],
   imports: [
     CommonModule,
     FormsModule,
     ExoRoutingModule,
-    SharedModule
+    SharedModule,
+    ReactiveFormsModule
   ]
 })
 export class DemoModule { }

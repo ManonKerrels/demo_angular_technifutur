@@ -71,7 +71,7 @@
 
 <p>Lorem ipsum <span appHighlight="red" [black-text]="false" >dolor</span> sit amet.</p>
 
-<p appHighlight="green">Lorem, ipsum dolor.</p>
+<p appGreenBg (color-swapped)="onColorSwapped($event)">Lorem, ipsum dolor.</p>
 
-
+<p appChildText="Premier enfant" (increase-child)="countChildren()" > Nombre d'enfants générés : {{ nbrEnfant }} </p>
 
