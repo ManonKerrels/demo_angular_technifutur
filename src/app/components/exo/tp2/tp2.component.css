@@ -1,3 +1,59 @@
 h3 {
     color: burlywood;
 }
+
+.tab {
+    border: solid black 1px;
+    text-align: center;
+}
+
+.ligne {
+    border: solid black 1px;
+}
+
+.case {
+    border: solid black 1px;
+    text-align: center;
+}
+
+.case1 {
+    border: solid black 1px;
+    text-align: center;
+    background-color: green;
+}
+
+.case2 {
+    border: solid black 1px;
+    text-align: center;
+    background-color: blue;
+}
+
+.case3 {
+    border: solid black 1px;
+    text-align: center;
+    background-color: red;
+}
+
+.case4 {
+    border: solid black 1px;
+    text-align: center;
+    background-color: purple;
+}
+
+.case5 {
+    border: solid black 1px;
+    text-align: center;
+    background-color: yellow;
+}
+
+.case6 {
+    border: solid black 1px;
+    text-align: center;
+    background-color: brown;
+}
+
+.case7 {
+    border: solid black 1px;
+    text-align: center;
+    background-color: pink;
+}
