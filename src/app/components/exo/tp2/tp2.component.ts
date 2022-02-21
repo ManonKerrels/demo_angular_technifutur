@@ -7,14 +7,22 @@ import { Component, OnInit } from '@angular/core';
 })
 export class Tp2Component implements OnInit {
 
-  color1: string = "green";
-  color2: string = "green";
-  color3: string = "green";
-  color4: string = "green";
+  color1: string = "white";
+  color2: string = "white";
+  color3: string = "white";
+  color4: string = "white";
 
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  reset(){
+    if(this.color1 != "white" || this.color2 != "white" || this.color3 != "white" || this.color4 != "white")
+    this.color1 = "white";
+    this.color2 = "white";
+    this.color3 = "white";
+    this.color4 = "white";
   }
 
 }
