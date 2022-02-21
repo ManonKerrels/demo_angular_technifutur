@@ -8,12 +8,14 @@ import { DemoBindingComponent } from './components/demo/demo-binding/demo-bindin
 import { ExerciceCompoComponent } from './components/exo/exercice-compo/exercice-compo.component';
 import { AccueilComponent } from './components/accueil/accueil.component';
 import { Page404Component } from './components/page404/page404.component';
+import { Tp2Component } from './components/tp2/tp2.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     AccueilComponent,
     Page404Component,
+    Tp2Component,
   ],
   imports: [
     BrowserModule,
