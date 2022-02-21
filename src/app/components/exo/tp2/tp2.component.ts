@@ -7,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class Tp2Component implements OnInit {
 
+  color: string = "Vert";
+
   constructor() { }
 
   ngOnInit(): void {
