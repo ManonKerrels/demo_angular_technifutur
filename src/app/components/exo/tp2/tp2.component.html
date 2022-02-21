@@ -7,13 +7,7 @@
 <div>
     <table class="tab2">
         <tr class="ligne">
-            <td class="case">Vert</td>
-            <td class="case">Bleu</td>
-            <td class="case">Rouge</td>
-            <td class="case">Mauve</td>
-            <td class="case">Jaune</td>
-            <td class="case">Brun</td>
-            <td class="case">Rose</td>
+            <td *ngFor="let color of tabColor"> {{ color }} </td>
         </tr>
         <tr class="ligne">
             <td class="case1">1</td>
@@ -40,53 +34,29 @@
         <tr class="ligne">
             <td class="case">
                 <select [(ngModel)]="color1">
-                    <option value="green">Vert</option>
-                    <option value="blue">Bleu</option>
-                    <option value="red">Rouge</option>
-                    <option value="purple">Mauve</option>
-                    <option value="yellow">Jaune</option>
-                    <option value="brown">Brun</option>
-                    <option value="pink">Rose</option>
+                    <option *ngFor="let color of tabColor"> {{ color }} </option>
                 </select>
             </td>
             <td class="case">
                 <select [(ngModel)]="color2">
-                    <option value="green">Vert</option>
-                    <option value="blue">Bleu</option>
-                    <option value="red">Rouge</option>
-                    <option value="purple">Mauve</option>
-                    <option value="yellow">Jaune</option>
-                    <option value="brown">Brun</option>
-                    <option value="pink">Rose</option>
+                    <option *ngFor="let color of tabColor"> {{ color }} </option>
                 </select>
             </td>
             <td class="case">
                 <select [(ngModel)]="color3">
-                    <option value="green">Vert</option>
-                    <option value="blue">Bleu</option>
-                    <option value="red">Rouge</option>
-                    <option value="purple">Mauve</option>
-                    <option value="yellow">Jaune</option>
-                    <option value="brown">Brun</option>
-                    <option value="pink">Rose</option>
+                    <option *ngFor="let color of tabColor"> {{ color }} </option>
                 </select>
             </td>
             <td class="case">
                 <select [(ngModel)]="color4">
-                    <option value="green">Vert</option>
-                    <option value="blue">Bleu</option>
-                    <option value="red">Rouge</option>
-                    <option value="purple">Mauve</option>
-                    <option value="yellow">Jaune</option>
-                    <option value="brown">Brun</option>
-                    <option value="pink">Rose</option>
+                    <option *ngFor="let color of tabColor"> {{ color }} </option>
                 </select>
             </td>
         </tr>
     </table>
 
     <button (click)="reset()">Reset</button>
-    <button>Valider</button>
+    <button (click)="valid()" >Valider</button>
 </div>
 
 <br>
