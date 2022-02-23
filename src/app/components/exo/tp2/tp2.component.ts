@@ -21,8 +21,10 @@ export class Tp2Component implements OnInit {
   color2: string = "White";
   color3: string = "White";
   color4: string = "White";
+  oubli: string = "White";
 
   compteur: number = 0;
+
   playerWin: boolean = false;
   wrongPlace: boolean = false;
   endGame: boolean = false;
@@ -37,8 +39,14 @@ export class Tp2Component implements OnInit {
   unvalid: boolean = false;
   notGoodPlace: boolean = false;
 
+  countGreen: number = 0;
+  countBlue: number = 0;
+  countRed: number = 0;
+  countPurple: number = 0;
+  countYellow: number = 0;
+  countBrown: number = 0;
+  countPink: number = 0;
 
-  oubli: string = "White";
 
   constructor() { }
 
@@ -62,6 +70,24 @@ export class Tp2Component implements OnInit {
     if(this.compteur < 10){
       this.valide = true;
       this.inGame = true;
+
+      // if((this.soluce1 = "Green") || (this.soluce2 = "Green") || (this.soluce3 = "Green") || (this.soluce4 = "Green")) {
+      //   this.countGreen++;
+      // } else if((this.soluce1 = "Blue") || (this.soluce2 = "Blue") || (this.soluce3 = "Blue") || (this.soluce4 = "Blue")) {
+      //   this.countBlue++;
+      // } else if ((this.soluce1 = "Red") || (this.soluce2 = "Red") || (this.soluce3 = "Red") || (this.soluce4 = "Red")){
+      //   this.countRed++;
+      // } else if((this.soluce1 = "Purple") || (this.soluce2 = "Purple") || (this.soluce3 = "Purple") || (this.soluce4 = "Purple")) {
+      //   this.countPurple++;
+      // } else if((this.soluce1 = "Yellow") || (this.soluce2 = "Yellow") || (this.soluce3 = "Yellow") || (this.soluce4 = "Yellow")) {
+      //   this.countYellow++;
+      // } else if((this.soluce1 = "Brown") || (this.soluce2 = "Brown") || (this.soluce3 = "Brown") || (this.soluce4 = "Brown")) {
+      //   this.countBrown++;
+      // } else if((this.soluce1 = "Pink") || (this.soluce2 = "Pink") || (this.soluce3 = "Pink") || (this.soluce4 = "Pink")) {
+      //   this.countPink++;
+      // }
+
+
 
       if((this.color1 == this.soluce1) && (this.color2 == this.soluce2) && (this.color3 == this.soluce3) && (this.color4 == this.soluce4)){
         this.playerWin = true;
