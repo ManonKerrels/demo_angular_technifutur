@@ -22,6 +22,19 @@
     </table>
 </div>
 <br>
+
+<div *ngIf="playerWin">
+    <p>Bravo, vous avez gagné la partie !</p>
+</div>
+
+<div *ngIf="wrongPlace">
+    <p>Vous n'avez pas la bonne solution. Recommencez !</p>
+    <p>Il vous reste {{ (10 -compteur) }} essais.</p>
+</div>
+
+<div *ngIf="endGame">
+    <p>Vous avez utilisé vos 10 essais. Game Over !</p>
+</div>
 <br>
 <div>
     <table class="tab">

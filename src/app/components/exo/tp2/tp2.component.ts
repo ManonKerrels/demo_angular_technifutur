@@ -23,6 +23,9 @@ export class Tp2Component implements OnInit {
   color4: string = "White";
 
   compteur: number = 0;
+  playerWin: boolean = false;
+  wrongPlace: boolean = false;
+  endGame: boolean = false;
 
   soluce1: string = "Pink";
   soluce2: string = "Green";
@@ -52,18 +55,17 @@ export class Tp2Component implements OnInit {
       this.valide = true;
 
       if((this.color1 == this.soluce1) && (this.color2 == this.soluce2) && (this.color3 == this.soluce3) && (this.color4 == this.soluce4)){
-        alert("Bravo, vous avez trouvé la solution !");
+        this.playerWin = true;
       } else if ((this.color1 == this.oubli) || (this.color2 == this.oubli) || (this.color3 == this.oubli) || (this.color4 == this.oubli)){
         alert("Vous avez oublié de remplir une ou plusieurs cases !");
       } else {
-        alert("Vous n'avez pas la bonne solution. Recommencez !");
         this.compteur ++;
-        alert("Il vous reste " + (10 - this.compteur) + " essais !");
+        this.wrongPlace = true;
       }
 
-
     } else {
-      alert("Vous avez utilisé vos 10 essais. Fin de la partie !");
+      this.wrongPlace = false;
+      this.endGame = true;
     }
   }
 
