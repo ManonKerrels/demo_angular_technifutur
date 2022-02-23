@@ -56,3 +56,7 @@ h3 {
 .correct {
     border: solid greenyellow 2px;
 }
+
+.false {
+    border: solid darkred 2px;
+}
