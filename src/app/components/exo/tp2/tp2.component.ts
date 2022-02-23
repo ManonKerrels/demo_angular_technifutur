@@ -22,10 +22,15 @@ export class Tp2Component implements OnInit {
   color3: string = "White";
   color4: string = "White";
 
-  soluce1: string = "Green";
+  compteur: number = 0;
+
+  soluce1: string = "Pink";
   soluce2: string = "Green";
-  soluce3: string = "Green";
+  soluce3: string = "Yellow";
   soluce4: string = "Green";
+
+  valide: boolean = false;
+
 
   oubli: string = "White";
 
@@ -42,19 +47,28 @@ export class Tp2Component implements OnInit {
     this.color4 = "White";
   }
 
-  valid(soluce1: string, soluce2: string, soluce3: string, soluce4: string){
-    soluce1 = "Green";
-    soluce2 = "Green";
-    soluce3  = "Green";
-    soluce4 = "Green";
+  valid(){
+    if(this.compteur < 10){
+      this.valide = true;
 
-    if((this.color1 == this.soluce1) && (this.color2 == this.soluce2) && (this.color3 == this.soluce3) && (this.color4 == this.soluce4)){
-        alert("Solution");
+      if((this.color1 == this.soluce1) && (this.color2 == this.soluce2) && (this.color3 == this.soluce3) && (this.color4 == this.soluce4)){
+        alert("Bravo, vous avez trouvé la solution !");
       } else if ((this.color1 == this.oubli) || (this.color2 == this.oubli) || (this.color3 == this.oubli) || (this.color4 == this.oubli)){
-        alert("Oubli");
+        alert("Vous avez oublié de remplir une ou plusieurs cases !");
       } else {
-        alert("Pas la solution");
+        alert("Vous n'avez pas la bonne solution. Recommencez !");
+        this.compteur ++;
+        alert("Il vous reste " + (10 - this.compteur) + " essais !");
       }
+
+
+    } else {
+      alert("Vous avez utilisé vos 10 essais. Fin de la partie !");
+    }
+  }
+
+  touched(){
+    this.valide = false;
   }
 
 }

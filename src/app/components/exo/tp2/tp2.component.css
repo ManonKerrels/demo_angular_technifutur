@@ -52,3 +52,7 @@ h3 {
     text-align: center;
     background-color: pink;
 }
+
+.correct {
+    border: solid greenyellow 2px;
+}

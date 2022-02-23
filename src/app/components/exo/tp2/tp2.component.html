@@ -1,6 +1,7 @@
 <h3>TP2: Exercice du Mastermind</h3>
 
 <p>Voici un jeu du MasterMind: vous devez trouver une combinaison de 4 couleurs parmi les 7 proposées.</p>
+<p>Essayez de la trouver en moins de 10 essais.</p>
 <p>Bon amusement !</p>
 
 <h4>Couleurs disponibles pour le jeu</h4>
@@ -18,22 +19,25 @@
             <td class="case6">6</td>
             <td class="case7">7</td>
         </tr>
-        
     </table>
 </div>
 <br>
-
+<br>
 <div>
     <table class="tab">
         <tr class="ligne">
-            <td [ngStyle]="{'background-color': color1}">Couleur 1</td>
-            <td [ngStyle]="{'background-color': color2}">Couleur 2</td>
-            <td [ngStyle]="{'background-color': color3}">Couleur 3</td>
-            <td [ngStyle]="{'background-color': color4}">Couleur 4</td>
+            <td [ngStyle]="{'background-color': color1}"
+                [ngClass]="{'correct' : color1 == soluce1 && valide }">Couleur 1</td>
+            <td [ngStyle]="{'background-color': color2}"
+                [ngClass]="{'correct' : color2 == soluce2 && valide }">Couleur 2</td>
+            <td [ngStyle]="{'background-color': color3}"
+                [ngClass]="{'correct' : color3 == soluce3 && valide }">Couleur 3</td>
+            <td [ngStyle]="{'background-color': color4}"
+                [ngClass]="{'correct' : color4 == soluce4 && valide }">Couleur 4</td>
         </tr>
         <tr class="ligne">
             <td class="case">
-                <select [(ngModel)]="color1">
+                <select [(ngModel)]="color1" (change)="touched()" >
                     <option *ngFor="let color of tabColor"> {{ color }} </option>
                 </select>
             </td>
@@ -56,7 +60,8 @@
     </table>
 
     <button (click)="reset()">Reset</button>
-    <button (click)="valid(color1, color2, color3, color4)">Valider</button>
+    <button (click)="valid()">Valider</button>
+    <button>Nouvelle partie</button>
 </div>
 
 
