@@ -60,3 +60,7 @@ h3 {
 .false {
     border: solid darkred 2px;
 }
+
+.uncorrect {
+    border: solid darkorange 2px;
+}

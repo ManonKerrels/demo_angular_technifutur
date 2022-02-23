@@ -43,13 +43,21 @@
     <table class="tab">
         <tr class="ligne">
             <td [ngStyle]="{'background-color': color1}"
-                [ngClass]="{'correct' : color1 == soluce1 && valide, 'false' : color1 != soluce1 && unvalid }">Couleur 1</td>
+                [ngClass]="{'correct' : color1 == soluce1 && valide, 
+                'uncorrect' : ((color1 == soluce2) || (color1 == soluce3) || (color1 == soluce4)) && notGoodPlace, 
+                'false' : color1 != soluce1 && unvalid }">Couleur 1</td>
             <td [ngStyle]="{'background-color': color2}"
-                [ngClass]="{'correct' : color2 == soluce2 && valide, 'false' : color2 != soluce2 && unvalid }">Couleur 2</td>
+                [ngClass]="{'correct' : color2 == soluce2 && valide, 
+                'uncorrect' : ((color2 == soluce1) || (color2 == soluce3) || (color2 == soluce4)) && notGoodPlace,
+                'false' : color2 != soluce2 && unvalid }">Couleur 2</td>
             <td [ngStyle]="{'background-color': color3}"
-                [ngClass]="{'correct' : color3 == soluce3 && valide, 'false' : color3 != soluce3 && unvalid }">Couleur 3</td>
+                [ngClass]="{'correct' : color3 == soluce3 && valide, 
+                'uncorrect' : ((color3 == soluce1) || (color3 == soluce2) || (color3 == soluce4)) && notGoodPlace,
+                'false' : color3 != soluce3 && unvalid }">Couleur 3</td>
             <td [ngStyle]="{'background-color': color4}"
-                [ngClass]="{'correct' : color4 == soluce4 && valide, 'false' : color4 != soluce4 && unvalid }">Couleur 4</td>
+                [ngClass]="{'correct' : color4 == soluce4 && valide, 
+                'uncorrect' : ((color4 == soluce1) || (color4 == soluce2) || (color4 == soluce3)) && notGoodPlace,
+                'false' : color4 != soluce4 && unvalid }">Couleur 4</td>
         </tr>
         <tr class="ligne">
             <td class="case">

@@ -35,6 +35,7 @@ export class Tp2Component implements OnInit {
 
   valide: boolean = false;
   unvalid: boolean = false;
+  notGoodPlace: boolean = false;
 
 
   oubli: string = "White";
@@ -67,6 +68,7 @@ export class Tp2Component implements OnInit {
       } else if ((this.color1 == this.oubli) || (this.color2 == this.oubli) || (this.color3 == this.oubli) || (this.color4 == this.oubli)){
         alert("Vous avez oublié de remplir une ou plusieurs cases !");
       } else {
+        this.notGoodPlace = true;
         this.unvalid = true;
         this.compteur ++;
         this.wrongPlace = true;
@@ -85,6 +87,7 @@ export class Tp2Component implements OnInit {
     this.playerWin = false;
     this.valide = false;
     this.unvalid = false;
+    this.notGoodPlace = false;
   }
 
   newGame(){
