@@ -11,21 +11,29 @@ export class Exo3Component implements OnInit {
   listTache: Tache [] = [
     {
       nom: 'Tâche 1',
-      id: 1
+      date: new Date
     },
     {
       nom: 'Tâche 2',
-      id: 2
+      date: new Date
     },
     {
       nom: 'Tâche 3',
-      id: 3
+      date: new Date
     },
   ]
 
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  onFirst(toInsert: Tache){
+    this.listTache.push(toInsert);
+  }
+
+  onLast(toInsert: Tache){
+    this.listTache.unshift(toInsert);
   }
 
 }

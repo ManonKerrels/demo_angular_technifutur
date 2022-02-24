@@ -2,7 +2,7 @@
 
 <div id="parent">
     <div id="enfant-ajout">
-        <app-enfant-ajout></app-enfant-ajout>
+        <app-enfant-ajout (task-go-down)="onFirst($event)" (task-go-up)="onLast($event)" ></app-enfant-ajout>
     </div>
     <div id="enfant-item">
         <app-enfant-item [item]="listTache"></app-enfant-item>

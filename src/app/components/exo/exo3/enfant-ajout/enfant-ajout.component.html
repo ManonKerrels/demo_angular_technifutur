@@ -1,5 +1,19 @@
 <h4>Ajouter une tâche</h4>
 
-<input type="text"><br>
-<button type="submit">Au début</button>
-<button type="submit">À la fin</button>
+<div [formGroup]="tacheInsertForm" (task-go-down)="onEnd()" (task-go-up)="onBegin()">
+    <div>
+        <label for="tache-name">Nom</label><br>
+        <input type="text" id="tache-name" formControlName="nom"><br>
+    </div>
+    <div>
+        <label for="tache-date">Date</label><br>
+        <input type="date" id="tache-date" formControlName="date"><br>
+    </div>
+    <div>
+
+        <button type="submit" (click)="onBegin()">Au début</button>
+        <button type="submit" (click)="onEnd()">À la fin</button>
+    </div>
+    
+</div>
+
