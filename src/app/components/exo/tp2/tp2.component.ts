@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { timeout } from 'rxjs';
 
 @Component({
   selector: 'app-tp2',
@@ -30,10 +31,10 @@ export class Tp2Component implements OnInit {
   endGame: boolean = false;
   inGame: boolean = false;
 
-  soluce1: string = "Pink";
-  soluce2: string = "Green";
-  soluce3: string = "Yellow";
-  soluce4: string = "Green";
+  soluce1: string = "";
+  soluce2: string = "";
+  soluce3: string = "";
+  soluce4: string = "";
 
   valide: boolean = false;
   unvalid: boolean = false;
@@ -50,8 +51,7 @@ export class Tp2Component implements OnInit {
 
   constructor() { }
 
-  ngOnInit(): void {
-  }
+  ngOnInit(): void { }
 
   reset(){
     if(this.color1 != "White" || this.color2 != "White" || this.color3 != "White" || this.color4 != "White") {
@@ -117,6 +117,11 @@ export class Tp2Component implements OnInit {
   }
 
   newGame(){
+    this.soluce1 = this.tabColor[Math.floor((Math.random()) * this.tabColor.length)];
+    this.soluce2 = this.tabColor[Math.floor((Math.random()) * this.tabColor.length)];
+    this.soluce3 = this.tabColor[Math.floor((Math.random()) * this.tabColor.length)];
+    this.soluce4 = this.tabColor[Math.floor((Math.random()) * this.tabColor.length)];
+
     if((10 - this.compteur) != 0){
       this.compteur = 0;
     }
