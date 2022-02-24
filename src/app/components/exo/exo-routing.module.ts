@@ -6,6 +6,7 @@ import { ExerciceCompoComponent } from './exercice-compo/exercice-compo.componen
 import { ExoFormComponent } from './exo-form/exo-form.component';
 import { ExoProduitComponent } from './exo-produit/exo-produit.component';
 import { ExoComponent } from './exo.component';
+import { Exo3Component } from './exo3/exo3.component';
 import { ParentCommuComponent } from './parent-commu/parent-commu.component';
 import { Tp2Component } from './tp2/tp2.component';
 
@@ -17,6 +18,7 @@ const routes: Routes = [
     { path: 'produit', component: ExoProduitComponent },
     { path:'parent', component: ParentCommuComponent },
     { path:'exoForm', component: ExoFormComponent },
+    { path: 'exo3', component: Exo3Component },
     { path:'tp2', component: Tp2Component }
   ] }
 ];

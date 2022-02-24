@@ -1,0 +1,22 @@
+h3 {
+    color: burlywood;
+}
+
+#parent {
+    padding: 10px 30px 0 30px;
+}
+
+#parent > div {
+    margin: 20 px;
+    padding: 20px;
+    background-color: lightgreen;
+    border: 2px solid black;
+}
+
+#enfant-ajout {
+    width: 50%;
+}
+
+#enfant-item {
+    width: 50%;
+}

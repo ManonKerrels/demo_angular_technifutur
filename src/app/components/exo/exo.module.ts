@@ -13,6 +13,9 @@ import { Enfant1CommuComponent } from './enfant1-commu/enfant1-commu.component';
 import { Enfant2CommuComponent } from './enfant2-commu/enfant2-commu.component';
 import { ExoFormComponent } from './exo-form/exo-form.component';
 import { Tp2Component } from './tp2/tp2.component';
+import { Exo3Component } from './exo3/exo3.component';
+import { EnfantAjoutComponent } from './exo3/enfant-ajout/enfant-ajout.component';
+import { EnfantItemComponent } from './exo3/enfant-item/enfant-item.component';
 
 
 
@@ -27,7 +30,10 @@ import { Tp2Component } from './tp2/tp2.component';
     Enfant1CommuComponent,
     Enfant2CommuComponent,
     ExoFormComponent,
-    Tp2Component
+    Tp2Component,
+    Exo3Component,
+    EnfantAjoutComponent,
+    EnfantItemComponent
   ],
   imports: [
     CommonModule,
