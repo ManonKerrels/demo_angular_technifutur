@@ -16,4 +16,8 @@ export class EnfantItemComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  onMorePrior(){}
+
+  onLessPrior(){}
+
 }

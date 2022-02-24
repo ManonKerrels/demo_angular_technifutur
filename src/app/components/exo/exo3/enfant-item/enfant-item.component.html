@@ -1,5 +1,7 @@
 <h4>Liste des tâches</h4>
 
 <div>
-    <div *ngFor="let tache of listTache">{{ tache.nom }} - {{ tache.date }} </div>
+    <div *ngFor="let tache of listTache">{{ tache.nom }} - {{ tache.date }} - 
+        <button type="submit" (click)="onMorePrior()">Monter priorité</button> - 
+        <button type="submit"(click)="onLessPrior()" >Descendre priorité</button> </div>
 </div>
