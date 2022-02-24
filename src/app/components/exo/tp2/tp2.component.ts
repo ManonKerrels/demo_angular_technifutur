@@ -90,6 +90,7 @@ export class Tp2Component implements OnInit {
 
 
       if((this.color1 == this.soluce1) && (this.color2 == this.soluce2) && (this.color3 == this.soluce3) && (this.color4 == this.soluce4)){
+        this.inGame = false;
         this.playerWin = true;
       } else if ((this.color1 == this.oubli) || (this.color2 == this.oubli) || (this.color3 == this.oubli) || (this.color4 == this.oubli)){
         alert("Vous avez oublié de remplir une ou plusieurs cases !");
@@ -104,6 +105,7 @@ export class Tp2Component implements OnInit {
       this.inGame = false;
       this.wrongPlace = false;
       this.endGame = true;
+      this.notGoodPlace = false;
     }
   }
 
@@ -117,10 +119,18 @@ export class Tp2Component implements OnInit {
   }
 
   newGame(){
+    this.playerWin = false;
     this.soluce1 = this.tabColor[Math.floor((Math.random()) * this.tabColor.length)];
     this.soluce2 = this.tabColor[Math.floor((Math.random()) * this.tabColor.length)];
     this.soluce3 = this.tabColor[Math.floor((Math.random()) * this.tabColor.length)];
     this.soluce4 = this.tabColor[Math.floor((Math.random()) * this.tabColor.length)];
+
+    this.endGame = false;
+
+    this.color1 = "White";
+    this.color2 = "White";
+    this.color3 = "White";
+    this.color4 = "White";
 
     if((10 - this.compteur) != 0){
       this.compteur = 0;

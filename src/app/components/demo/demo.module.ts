@@ -14,6 +14,9 @@ import { DemoCommuEnfantComponent } from './demo-commu-enfant/demo-commu-enfant.
 import { GreenBgDirective } from './directives/green-bg.directive';
 import { ChildTextDirective } from './directives/child-text.directive';
 import { DemoFormsComponent } from './demo-forms/demo-forms.component';
+import { ProduitsComponent } from './produits/produits.component';
+import { InsertProduitFormComponent } from './produits/insert-produit-form/insert-produit-form.component';
+import { ListProduitsComponent } from './produits/list-produits/list-produits.component';
 
 
 
@@ -29,7 +32,10 @@ import { DemoFormsComponent } from './demo-forms/demo-forms.component';
     DemoCommuEnfantComponent,
     GreenBgDirective,
     ChildTextDirective,
-    DemoFormsComponent
+    DemoFormsComponent,
+    ProduitsComponent,
+    InsertProduitFormComponent,
+    ListProduitsComponent
   ],
   imports: [
     CommonModule,
