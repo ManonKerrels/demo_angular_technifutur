@@ -17,6 +17,7 @@ import { DemoFormsComponent } from './demo-forms/demo-forms.component';
 import { ProduitsComponent } from './produits/produits.component';
 import { InsertProduitFormComponent } from './produits/insert-produit-form/insert-produit-form.component';
 import { ListProduitsComponent } from './produits/list-produits/list-produits.component';
+import { ListProduitsItemComponent } from './produits/list-produits/list-produits-item/list-produits-item.component';
 
 
 
@@ -35,7 +36,8 @@ import { ListProduitsComponent } from './produits/list-produits/list-produits.co
     DemoFormsComponent,
     ProduitsComponent,
     InsertProduitFormComponent,
-    ListProduitsComponent
+    ListProduitsComponent,
+    ListProduitsItemComponent
   ],
   imports: [
     CommonModule,

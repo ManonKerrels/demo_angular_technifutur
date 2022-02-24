@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Produit } from 'src/app/models/produit.model';
 
 @Component({
   selector: 'app-produits',
@@ -7,9 +8,37 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ProduitsComponent implements OnInit {
 
+  listProduit : Produit[] = [
+    {
+        marque: "marque1",
+        modele: "modele1",
+        prix: 1,
+        stock: 1,
+        en_vente: true,
+      },
+      {
+        marque: "marque2",
+        modele: "modele2",
+        prix: 2,
+        stock: 2,
+        en_vente: true,
+      },
+      {
+        marque: "marque3",
+        modele: "modele3",
+        prix: 3,
+        stock: 3,
+        en_vente: true,
+      }
+  ]
+
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  onSubmitted(toInsert: Produit){
+    this.listProduit.push(toInsert);
   }
 
 }

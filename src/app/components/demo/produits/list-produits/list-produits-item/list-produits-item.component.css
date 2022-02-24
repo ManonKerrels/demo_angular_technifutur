@@ -1,0 +1,11 @@
+.produit-list-item {
+    display: flex;
+    background-color: lightyellow;
+    color: brown;
+    margin-bottom: 10px;
+    padding: 10px;
+}
+
+.produit-list-item > div {
+    width: 50%;
+}
