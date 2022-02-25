@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { timeout } from 'rxjs';
 
 @Component({
   selector: 'app-tp2',
@@ -36,17 +35,14 @@ export class Tp2Component implements OnInit {
   soluce3: string = "";
   soluce4: string = "";
 
-  valide: boolean = false;
-  unvalid: boolean = false;
-  notGoodPlace: boolean = false;
+  valide: boolean = false; //commencement de jeu
+  unvalid: boolean = false; //couleur non présente
+  uncorrectPlace: boolean = false; //pas la bonne place
 
-  countGreen: number = 0;
-  countBlue: number = 0;
-  countRed: number = 0;
-  countPurple: number = 0;
-  countYellow: number = 0;
-  countBrown: number = 0;
-  countPink: number = 0;
+  soluce1IsPlaced: boolean = false;
+  soluce2IsPlaced: boolean = false;
+  soluce3IsPlaced: boolean = false;
+  soluce4IsPlaced: boolean = false;
 
 
   constructor() { }
@@ -67,47 +63,57 @@ export class Tp2Component implements OnInit {
   }
 
   valid(){
-    if(this.compteur < 10){
+    //while 10 essais
+    if(this.compteur < 10) {
       this.valide = true;
       this.inGame = true;
 
-      // if((this.soluce1 = "Green") || (this.soluce2 = "Green") || (this.soluce3 = "Green") || (this.soluce4 = "Green")) {
-      //   this.countGreen++;
-      // } else if((this.soluce1 = "Blue") || (this.soluce2 = "Blue") || (this.soluce3 = "Blue") || (this.soluce4 = "Blue")) {
-      //   this.countBlue++;
-      // } else if ((this.soluce1 = "Red") || (this.soluce2 = "Red") || (this.soluce3 = "Red") || (this.soluce4 = "Red")){
-      //   this.countRed++;
-      // } else if((this.soluce1 = "Purple") || (this.soluce2 = "Purple") || (this.soluce3 = "Purple") || (this.soluce4 = "Purple")) {
-      //   this.countPurple++;
-      // } else if((this.soluce1 = "Yellow") || (this.soluce2 = "Yellow") || (this.soluce3 = "Yellow") || (this.soluce4 = "Yellow")) {
-      //   this.countYellow++;
-      // } else if((this.soluce1 = "Brown") || (this.soluce2 = "Brown") || (this.soluce3 = "Brown") || (this.soluce4 = "Brown")) {
-      //   this.countBrown++;
-      // } else if((this.soluce1 = "Pink") || (this.soluce2 = "Pink") || (this.soluce3 = "Pink") || (this.soluce4 = "Pink")) {
-      //   this.countPink++;
-      // }
+      //en cas d'oubli
+      if ((this.color1 == this.oubli) || (this.color2 == this.oubli) || (this.color3 == this.oubli) || (this.color4 == this.oubli)){
+        alert("Vous avez oublié de remplir une ou plusieurs cases !");
 
-
-
-      if((this.color1 == this.soluce1) && (this.color2 == this.soluce2) && (this.color3 == this.soluce3) && (this.color4 == this.soluce4)){
+        //en cas de réussite
+      } else if((this.color1 == this.soluce1) && (this.color2 == this.soluce2) && (this.color3 == this.soluce3) && (this.color4 == this.soluce4)){
         this.inGame = false;
         this.playerWin = true;
-      } else if ((this.color1 == this.oubli) || (this.color2 == this.oubli) || (this.color3 == this.oubli) || (this.color4 == this.oubli)){
-        alert("Vous avez oublié de remplir une ou plusieurs cases !");
-      } else {
-        this.notGoodPlace = true;
+
+        //si couleur1 != soluce1 mais présente ailleurs dans le jeu
+      } else if (this.color1 != this.soluce1 && ((this.color1 == this.soluce2) || (this.color1 == this.soluce3) || (this.color1 == this.soluce4))) {
+        if(this.color1 == this.soluce2){
+          this.soluce2IsPlaced = true;
+        } else if(this.color1 == this.soluce3){
+          this.soluce3IsPlaced = true;
+        } else if(this.color1 == this.soluce4){
+          this.soluce4IsPlaced = true;
+        }
+
+        //couleur2 != soluce2 mais présente ailleurs dans le jeu
+      // } else if(this.color2 != this.soluce2 && ((this.color2 == this.soluce1) || (this.color2 == this.soluce3) || (this.color2 == this.soluce4))){
+      //   if(this.color2 == this.soluce1){
+      //     this.soluce1IsPlaced = true;
+      //   } else if(this.color2 == this.soluce3){
+      //     this.soluce3IsPlaced = true;
+      //   } else if(this.color2 == this.soluce4){
+      //     this.soluce4IsPlaced = true;
+      //   }
+
+      }
+      
+      //si rien n'est correct
+      else {
         this.unvalid = true;
         this.compteur ++;
         this.wrongPlace = true;
       }
 
-    } else {
+    } //end 10 essais
+    else {
+      this.compteur++;
       this.inGame = false;
       this.wrongPlace = false;
       this.endGame = true;
-      this.notGoodPlace = false;
-    }
   }
+}
 
   touched(){
     this.wrongPlace = false;
@@ -115,10 +121,11 @@ export class Tp2Component implements OnInit {
     this.playerWin = false;
     this.valide = false;
     this.unvalid = false;
-    this.notGoodPlace = false;
+    this.uncorrectPlace = false;
   }
 
   newGame(){
+    this.unvalid = false;
     this.playerWin = false;
     this.soluce1 = this.tabColor[Math.floor((Math.random()) * this.tabColor.length)];
     this.soluce2 = this.tabColor[Math.floor((Math.random()) * this.tabColor.length)];

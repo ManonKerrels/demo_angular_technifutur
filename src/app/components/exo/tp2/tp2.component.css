@@ -2,6 +2,11 @@ h3 {
     color: burlywood;
 }
 
+#color {
+    text-align: center;
+    border: dotted black 1px;
+}
+
 .tab {
     border: solid black 1px;
     text-align: center;
@@ -13,42 +18,49 @@ h3 {
 
 .case1 {
     border: solid black 1px;
+    width: 10%;
     text-align: center;
     background-color: green;
 }
 
 .case2 {
     border: solid black 1px;
+    width: 10%;
     text-align: center;
     background-color: blue;
 }
 
 .case3 {
     border: solid black 1px;
+    width: 10%;
     text-align: center;
     background-color: red;
 }
 
 .case4 {
     border: solid black 1px;
+    width: 10%;
     text-align: center;
     background-color: purple;
 }
 
 .case5 {
     border: solid black 1px;
+    width: 10%;
     text-align: center;
     background-color: yellow;
 }
 
 .case6 {
     border: solid black 1px;
+    width: 10%;
     text-align: center;
     background-color: brown;
 }
 
 .case7 {
     border: solid black 1px;
+    width: 10%;
     text-align: center;
     background-color: pink;
 }

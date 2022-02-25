@@ -1,14 +1,14 @@
 <h3>TP2: Exercice du Mastermind</h3>
 
 <p>Voici un jeu du MasterMind: vous devez trouver une combinaison de 4 couleurs parmi les 7 proposées.</p>
-<p>Essayez de la trouver en moins de 10 essais.</p>
+<p>Essayez de la trouver en moins de 10 essais. Pour commencer un nouveau jeu, commencez par cliquer sur le bouton "Nouvelle partie".</p>
 <p>Bon amusement !</p>
 
 <h4>Couleurs disponibles pour le jeu</h4>
 <div>
     <table class="tab2">
         <tr class="ligne">
-            <td *ngFor="let color of tabColor"> {{ color }} </td>
+            <td *ngFor="let color of tabColor" id="color"> {{ color }} </td>
         </tr>
         <tr class="ligne">
             <td class="case1">1</td>
@@ -30,11 +30,11 @@
 
 <div *ngIf="inGame" >
     <p>Nombre d'essais restants : {{ (10 - compteur) }} </p>
-    <!-- <p>Nombre de couleur verte : {{ countGreen }} </p> -->
 </div>
 
 <div *ngIf="playerWin">
     <p>Bravo, vous avez gagné la partie !</p>
+    <p>Votre nombre d'essais était de {{ (10-compteur) }}. Pourquoi ne pas essayer de s'améliorer ? </p>
 </div>
 
 <div *ngIf="wrongPlace">
@@ -58,20 +58,20 @@
     <table class="tab">
         <tr class="ligne">
             <td [ngStyle]="{'background-color': color1}"
-                [ngClass]="{'correct' : color1 == soluce1 && valide, 
-                'uncorrect' : ((color1 == soluce2) || (color1 == soluce3) || (color1 == soluce4)) && notGoodPlace, 
+                [ngClass]="{'correct' : color1 == soluce1 && valide,
+                'uncorrect' : soluce1IsPlaced,
                 'false' : color1 != soluce1 && unvalid }">Couleur 1</td>
             <td [ngStyle]="{'background-color': color2}"
                 [ngClass]="{'correct' : color2 == soluce2 && valide, 
-                'uncorrect' : ((color2 == soluce1) || (color2 == soluce3) || (color2 == soluce4)) && notGoodPlace,
+                'uncorrect' : soluce2IsPlaced,
                 'false' : color2 != soluce2 && unvalid }">Couleur 2</td>
             <td [ngStyle]="{'background-color': color3}"
                 [ngClass]="{'correct' : color3 == soluce3 && valide, 
-                'uncorrect' : ((color3 == soluce1) || (color3 == soluce2) || (color3 == soluce4)) && notGoodPlace,
+                'uncorrect' : soluce3IsPlaced,
                 'false' : color3 != soluce3 && unvalid }">Couleur 3</td>
             <td [ngStyle]="{'background-color': color4}"
                 [ngClass]="{'correct' : color4 == soluce4 && valide, 
-                'uncorrect' : ((color4 == soluce1) || (color4 == soluce2) || (color4 == soluce3)) && notGoodPlace,
+                'uncorrect' : soluce4IsPlaced,
                 'false' : color4 != soluce4 && unvalid }">Couleur 4</td>
         </tr>
         <tr class="ligne">
