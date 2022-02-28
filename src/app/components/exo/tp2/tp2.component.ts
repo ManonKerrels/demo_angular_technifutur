@@ -23,6 +23,11 @@ export class Tp2Component implements OnInit {
   color4: string = "White";
   oubli: string = "White";
 
+  lastProp1!: string;
+  lastProp2!: string;
+  lastProp3!: string;
+  lastProp4!: string;
+
   compteur: number = 0;
 
   playerWin: boolean = false;
@@ -38,6 +43,7 @@ export class Tp2Component implements OnInit {
   valide: boolean = false; //commencement de jeu
   unvalid: boolean = false; //couleur non présente
   uncorrectPlace: boolean = false; //pas la bonne place
+  correctPlace: boolean = false; //bonne place dans le jeu
 
   soluce1IsPlaced: boolean = false;
   soluce2IsPlaced: boolean = false;
@@ -68,35 +74,97 @@ export class Tp2Component implements OnInit {
       this.valide = true;
       this.inGame = true;
 
+      this.lastProp1 = this.color1;
+      this.lastProp2 = this.color2;
+      this.lastProp3 = this.color3;
+      this.lastProp4 = this.color4;
+
       //en cas d'oubli
       if ((this.color1 == this.oubli) || (this.color2 == this.oubli) || (this.color3 == this.oubli) || (this.color4 == this.oubli)){
         alert("Vous avez oublié de remplir une ou plusieurs cases !");
 
         //en cas de réussite
       } else if((this.color1 == this.soluce1) && (this.color2 == this.soluce2) && (this.color3 == this.soluce3) && (this.color4 == this.soluce4)){
+        this.soluce1IsPlaced = true;
+        this.soluce2IsPlaced = true;
+        this.soluce3IsPlaced = true;
+        this.soluce4IsPlaced = true;
+        this.correctPlace = true;
         this.inGame = false;
         this.playerWin = true;
 
         //si couleur1 != soluce1 mais présente ailleurs dans le jeu
       } else if (this.color1 != this.soluce1 && ((this.color1 == this.soluce2) || (this.color1 == this.soluce3) || (this.color1 == this.soluce4))) {
+        this.compteur++;
         if(this.color1 == this.soluce2){
           this.soluce2IsPlaced = true;
+          this.uncorrectPlace = true;
         } else if(this.color1 == this.soluce3){
           this.soluce3IsPlaced = true;
+          this.uncorrectPlace = true;
         } else if(this.color1 == this.soluce4){
           this.soluce4IsPlaced = true;
+          this.uncorrectPlace = true;
         }
 
         //couleur2 != soluce2 mais présente ailleurs dans le jeu
-      // } else if(this.color2 != this.soluce2 && ((this.color2 == this.soluce1) || (this.color2 == this.soluce3) || (this.color2 == this.soluce4))){
-      //   if(this.color2 == this.soluce1){
-      //     this.soluce1IsPlaced = true;
-      //   } else if(this.color2 == this.soluce3){
-      //     this.soluce3IsPlaced = true;
-      //   } else if(this.color2 == this.soluce4){
-      //     this.soluce4IsPlaced = true;
-      //   }
+      } else if(this.color2 != this.soluce2 && ((this.color2 == this.soluce1) || (this.color2 == this.soluce3) || (this.color2 == this.soluce4))){
+        this.compteur++;
+        if(this.color2 == this.soluce1){
+          this.soluce1IsPlaced = true;
+          this.uncorrectPlace = true;
+        } else if(this.color2 == this.soluce3){
+          this.soluce3IsPlaced = true;
+          this.uncorrectPlace = true;
+        } else if(this.color2 == this.soluce4){
+          this.soluce4IsPlaced = true;
+          this.uncorrectPlace = true;
+        }
 
+        //couleur3 != soluce3 mais présente ailleurs dans le jeu
+      } else if(this.color3 != this.soluce3 && ((this.color3 == this.soluce1) || (this.color3 == this.soluce2) || (this.color3 == this.soluce4))){
+        this.compteur++;
+        if(this.color3 == this.soluce1){
+          this.soluce1IsPlaced = true;
+          this.uncorrectPlace = true;
+        } else if (this.color3 == this.soluce2){
+          this.soluce2IsPlaced = true;
+          this.uncorrectPlace = true;
+        } else if (this.color3 == this.soluce4){
+          this.soluce4IsPlaced = true;
+          this.uncorrectPlace = true;
+        }
+
+        //couleur4 != soluce4 mais présente ailleurs dans le jeu
+      } else if(this.color4 != this.soluce4 && ((this.color4 == this.soluce1) || (this.color4 == this.soluce2) || (this.color4 == this.soluce3))){
+        this.compteur++;
+        if(this.color4 == this.soluce1){
+          this.soluce1IsPlaced = true;
+          this.uncorrectPlace = true;
+        } else if(this.color4 == this.soluce2){
+          this.soluce2IsPlaced = true;
+          this.uncorrectPlace = true;
+        } else if (this.color4 == this.soluce3){
+          this.soluce3IsPlaced = true;
+          this.uncorrectPlace = true;
+        }
+
+        //si une des bonnes couleurs est placée
+      } else if ((this.color1 == this.soluce1) || (this.color2 == this.soluce2) || (this.color3 == this.soluce3) || (this.color4 == this.soluce4)){
+         this.compteur++;
+        if((this.color1 == this.soluce1) && ((this.color2 != this.soluce2) || (this.color3 != this.soluce3) || (this.color4 != this.soluce4))){
+          this.soluce1IsPlaced = true;
+          this.correctPlace = true;
+        } else if((this.color2 == this.soluce2) && ((this.color1 != this.soluce1) || (this.color3 != this.soluce3) || (this.color4 != this.soluce4))){
+          this.soluce2IsPlaced = true;
+          this.correctPlace = true;
+        } else if ((this.color3 == this.soluce3) && ((this.color1 != this.soluce1) || (this.color2 != this.soluce2) || (this.color4 != this.soluce4))){
+          this.soluce3IsPlaced = true;
+          this.correctPlace = true;
+        } else if ((this.color4 == this.soluce4) && ((this.color1 != this.soluce1) || (this.color2 != this.soluce2) || (this.color3 != this.soluce3))){
+          this.soluce4IsPlaced = true;
+          this.correctPlace = true;
+        }
       }
       
       //si rien n'est correct
@@ -108,7 +176,6 @@ export class Tp2Component implements OnInit {
 
     } //end 10 essais
     else {
-      this.compteur++;
       this.inGame = false;
       this.wrongPlace = false;
       this.endGame = true;
@@ -122,6 +189,7 @@ export class Tp2Component implements OnInit {
     this.valide = false;
     this.unvalid = false;
     this.uncorrectPlace = false;
+    this.correctPlace = false;
   }
 
   newGame(){

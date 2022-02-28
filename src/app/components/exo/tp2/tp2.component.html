@@ -30,6 +30,20 @@
 
 <div *ngIf="inGame" >
     <p>Nombre d'essais restants : {{ (10 - compteur) }} </p>
+    
+    
+</div>
+
+<div *ngIf="valide">
+    <p>Votre dernière combinaison :</p>
+    <table class="tab">
+        <tr class="ligne">
+            <td [ngStyle]=" { 'background-color' : lastProp1 } " > {{ lastProp1 }} </td>
+            <td [ngStyle]=" { 'background-color' : lastProp2 } " > {{ lastProp2 }} </td>
+            <td [ngStyle]=" { 'background-color' : lastProp3 } " > {{ lastProp3 }} </td>
+            <td [ngStyle]=" { 'background-color' : lastProp4 } " > {{ lastProp4 }} </td>
+        </tr>
+    </table>
 </div>
 
 <div *ngIf="playerWin">
@@ -58,20 +72,20 @@
     <table class="tab">
         <tr class="ligne">
             <td [ngStyle]="{'background-color': color1}"
-                [ngClass]="{'correct' : color1 == soluce1 && valide,
-                'uncorrect' : soluce1IsPlaced,
+                [ngClass]="{'correct' : (color1 == soluce1) && (valide || (soluce1IsPlaced && correctPlace)),
+                'uncorrect' : soluce1IsPlaced && uncorrectPlace,
                 'false' : color1 != soluce1 && unvalid }">Couleur 1</td>
             <td [ngStyle]="{'background-color': color2}"
-                [ngClass]="{'correct' : color2 == soluce2 && valide, 
-                'uncorrect' : soluce2IsPlaced,
+                [ngClass]="{'correct' : (color2 == soluce2) && (valide || (soluce2IsPlaced && correctPlace)), 
+                'uncorrect' : soluce2IsPlaced && uncorrectPlace,
                 'false' : color2 != soluce2 && unvalid }">Couleur 2</td>
             <td [ngStyle]="{'background-color': color3}"
-                [ngClass]="{'correct' : color3 == soluce3 && valide, 
-                'uncorrect' : soluce3IsPlaced,
+                [ngClass]="{'correct' : (color3 == soluce3) && (valide || (soluce3IsPlaced && correctPlace)), 
+                'uncorrect' : soluce3IsPlaced && uncorrectPlace,
                 'false' : color3 != soluce3 && unvalid }">Couleur 3</td>
             <td [ngStyle]="{'background-color': color4}"
-                [ngClass]="{'correct' : color4 == soluce4 && valide, 
-                'uncorrect' : soluce4IsPlaced,
+                [ngClass]="{'correct' : (color4 == soluce4) && (valide || (soluce4IsPlaced && correctPlace)), 
+                'uncorrect' : soluce4IsPlaced && uncorrectPlace,
                 'false' : color4 != soluce4 && unvalid }">Couleur 4</td>
         </tr>
         <tr class="ligne">
