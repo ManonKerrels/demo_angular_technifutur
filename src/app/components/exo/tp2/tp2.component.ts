@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Pin } from 'src/app/models/pin.model';
 
 @Component({
   selector: 'app-tp2',
@@ -7,7 +8,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class Tp2Component implements OnInit {
 
-  tabColor = [
+  tabColor: string[] = [
     "Green",
     "Blue",
     "Red",
@@ -17,162 +18,92 @@ export class Tp2Component implements OnInit {
     "Pink"
   ]
 
-  color1: string = "White";
-  color2: string = "White";
-  color3: string = "White";
-  color4: string = "White";
-  oubli: string = "White";
+  color1!: Pin;
+  color2!: Pin;
+  color3!: Pin;
+  color4!: Pin;
 
-  lastProp1!: string;
-  lastProp2!: string;
-  lastProp3!: string;
-  lastProp4!: string;
+  lastProp1!: Pin;
+  lastProp2!: Pin;
+  lastProp3!: Pin;
+  lastProp4!: Pin;
 
-  compteur: number = 0;
+  compteur: number = 0
 
   playerWin: boolean = false;
   wrongPlace: boolean = false;
   endGame: boolean = false;
   inGame: boolean = false;
 
-  soluce1: string = "";
-  soluce2: string = "";
-  soluce3: string = "";
-  soluce4: string = "";
+  soluce1!: Pin;
+  soluce2!: Pin;
+  soluce3!: Pin;
+  soluce4!: Pin;
 
-  valide: boolean = false; //commencement de jeu
-  unvalid: boolean = false; //couleur non présente
-  uncorrectPlace: boolean = false; //pas la bonne place
-  correctPlace: boolean = false; //bonne place dans le jeu
+  tabSoluce: Pin[] = [
+    this.soluce1,
+    this.soluce2,
+    this.soluce3, 
+    this.soluce4
+  ];
 
-  soluce1IsPlaced: boolean = false;
-  soluce2IsPlaced: boolean = false;
-  soluce3IsPlaced: boolean = false;
-  soluce4IsPlaced: boolean = false;
+  tabPropose: Pin[] = [
+    this.lastProp1,
+    this.lastProp2,
+    this.lastProp3,
+    this.lastProp4
+  ];
 
 
-  constructor() { }
+  constructor() { 
+    this.newGame();
+  }
 
   ngOnInit(): void { }
 
   reset(){
-    if(this.color1 != "White" || this.color2 != "White" || this.color3 != "White" || this.color4 != "White") {
-      this.color1 = "White";
-      this.color2 = "White";
-      this.color3 = "White";
-      this.color4 = "White";
-    }
-    if((10 - this.compteur) != 0){
-      this.compteur = 0;
-    }
-    
+      this.color1 = {
+        color: "White",
+        status: undefined
+      };
+
+      this.color2 = {
+      color: "White",
+      status: undefined
+      };
+
+      this.color3 = {
+        color: "White",
+        status: undefined
+      };
+
+      this.color4 = {
+      color: "White",
+      status: undefined
+      };
   }
 
   valid(){
     //while 10 essais
     if(this.compteur < 10) {
-      this.valide = true;
       this.inGame = true;
 
-      this.lastProp1 = this.color1;
-      this.lastProp2 = this.color2;
-      this.lastProp3 = this.color3;
-      this.lastProp4 = this.color4;
+      for(let i = 0; i < this.tabPropose.length; i++){
+        this.tabPropose[i].status = undefined;
+        this.tabSoluce[i].status = undefined;
+      }
 
-      //en cas d'oubli
-      if ((this.color1 == this.oubli) || (this.color2 == this.oubli) || (this.color3 == this.oubli) || (this.color4 == this.oubli)){
-        alert("Vous avez oublié de remplir une ou plusieurs cases !");
-
-        //en cas de réussite
-      } else if((this.color1 == this.soluce1) && (this.color2 == this.soluce2) && (this.color3 == this.soluce3) && (this.color4 == this.soluce4)){
-        this.soluce1IsPlaced = true;
-        this.soluce2IsPlaced = true;
-        this.soluce3IsPlaced = true;
-        this.soluce4IsPlaced = true;
-        this.correctPlace = true;
-        this.inGame = false;
-        this.playerWin = true;
-
-        //si couleur1 != soluce1 mais présente ailleurs dans le jeu
-      } else if (this.color1 != this.soluce1 && ((this.color1 == this.soluce2) || (this.color1 == this.soluce3) || (this.color1 == this.soluce4))) {
-        this.compteur++;
-        if(this.color1 == this.soluce2){
-          this.soluce2IsPlaced = true;
-          this.uncorrectPlace = true;
-        } else if(this.color1 == this.soluce3){
-          this.soluce3IsPlaced = true;
-          this.uncorrectPlace = true;
-        } else if(this.color1 == this.soluce4){
-          this.soluce4IsPlaced = true;
-          this.uncorrectPlace = true;
-        }
-
-        //couleur2 != soluce2 mais présente ailleurs dans le jeu
-      } else if(this.color2 != this.soluce2 && ((this.color2 == this.soluce1) || (this.color2 == this.soluce3) || (this.color2 == this.soluce4))){
-        this.compteur++;
-        if(this.color2 == this.soluce1){
-          this.soluce1IsPlaced = true;
-          this.uncorrectPlace = true;
-        } else if(this.color2 == this.soluce3){
-          this.soluce3IsPlaced = true;
-          this.uncorrectPlace = true;
-        } else if(this.color2 == this.soluce4){
-          this.soluce4IsPlaced = true;
-          this.uncorrectPlace = true;
-        }
-
-        //couleur3 != soluce3 mais présente ailleurs dans le jeu
-      } else if(this.color3 != this.soluce3 && ((this.color3 == this.soluce1) || (this.color3 == this.soluce2) || (this.color3 == this.soluce4))){
-        this.compteur++;
-        if(this.color3 == this.soluce1){
-          this.soluce1IsPlaced = true;
-          this.uncorrectPlace = true;
-        } else if (this.color3 == this.soluce2){
-          this.soluce2IsPlaced = true;
-          this.uncorrectPlace = true;
-        } else if (this.color3 == this.soluce4){
-          this.soluce4IsPlaced = true;
-          this.uncorrectPlace = true;
-        }
-
-        //couleur4 != soluce4 mais présente ailleurs dans le jeu
-      } else if(this.color4 != this.soluce4 && ((this.color4 == this.soluce1) || (this.color4 == this.soluce2) || (this.color4 == this.soluce3))){
-        this.compteur++;
-        if(this.color4 == this.soluce1){
-          this.soluce1IsPlaced = true;
-          this.uncorrectPlace = true;
-        } else if(this.color4 == this.soluce2){
-          this.soluce2IsPlaced = true;
-          this.uncorrectPlace = true;
-        } else if (this.color4 == this.soluce3){
-          this.soluce3IsPlaced = true;
-          this.uncorrectPlace = true;
-        }
-
-        //si une des bonnes couleurs est placée
-      } else if ((this.color1 == this.soluce1) || (this.color2 == this.soluce2) || (this.color3 == this.soluce3) || (this.color4 == this.soluce4)){
-         this.compteur++;
-        if((this.color1 == this.soluce1) && ((this.color2 != this.soluce2) || (this.color3 != this.soluce3) || (this.color4 != this.soluce4))){
-          this.soluce1IsPlaced = true;
-          this.correctPlace = true;
-        } else if((this.color2 == this.soluce2) && ((this.color1 != this.soluce1) || (this.color3 != this.soluce3) || (this.color4 != this.soluce4))){
-          this.soluce2IsPlaced = true;
-          this.correctPlace = true;
-        } else if ((this.color3 == this.soluce3) && ((this.color1 != this.soluce1) || (this.color2 != this.soluce2) || (this.color4 != this.soluce4))){
-          this.soluce3IsPlaced = true;
-          this.correctPlace = true;
-        } else if ((this.color4 == this.soluce4) && ((this.color1 != this.soluce1) || (this.color2 != this.soluce2) || (this.color3 != this.soluce3))){
-          this.soluce4IsPlaced = true;
-          this.correctPlace = true;
+      for (let i = 0; i < this.tabPropose.length; i++) {
+        if(this.tabPropose[i].color == this.tabSoluce[i].color){
+          this.tabPropose[i].status = 'correct';
+          this.tabSoluce[i].status = 'correct';
+        } else {
+          this.tabPropose[i].status = 'false';
         }
       }
+
+
       
-      //si rien n'est correct
-      else {
-        this.unvalid = true;
-        this.compteur ++;
-        this.wrongPlace = true;
-      }
 
     } //end 10 essais
     else {
@@ -186,26 +117,30 @@ export class Tp2Component implements OnInit {
     this.wrongPlace = false;
     this.endGame = false;
     this.playerWin = false;
-    this.valide = false;
-    this.unvalid = false;
-    this.uncorrectPlace = false;
-    this.correctPlace = false;
   }
 
   newGame(){
-    this.unvalid = false;
     this.playerWin = false;
-    this.soluce1 = this.tabColor[Math.floor((Math.random()) * this.tabColor.length)];
-    this.soluce2 = this.tabColor[Math.floor((Math.random()) * this.tabColor.length)];
-    this.soluce3 = this.tabColor[Math.floor((Math.random()) * this.tabColor.length)];
-    this.soluce4 = this.tabColor[Math.floor((Math.random()) * this.tabColor.length)];
+
+    this.soluce1 = {
+      color: this.tabColor[Math.floor((Math.random()) * this.tabColor.length)],
+      status: undefined
+    }
+    this.soluce2 = {
+      color: this.tabColor[Math.floor((Math.random()) * this.tabColor.length)],
+      status: undefined
+    }
+    this.soluce3 = {
+      color: this.tabColor[Math.floor((Math.random()) * this.tabColor.length)],
+      status: undefined
+    }
+    this.soluce4 = {
+      color: this.tabColor[Math.floor((Math.random()) * this.tabColor.length)],
+      status: undefined
+    }
 
     this.endGame = false;
-
-    this.color1 = "White";
-    this.color2 = "White";
-    this.color3 = "White";
-    this.color4 = "White";
+    this.reset();
 
     if((10 - this.compteur) != 0){
       this.compteur = 0;
