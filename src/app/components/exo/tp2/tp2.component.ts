@@ -23,6 +23,11 @@ export class Tp2Component implements OnInit {
   color3!: Pin;
   color4!: Pin;
 
+  color5!: Pin;
+  color6!: Pin;
+  color7!: Pin;
+  color8!: Pin;
+
   lastProp1!: Pin;
   lastProp2!: Pin;
   lastProp3!: Pin;
@@ -88,6 +93,19 @@ export class Tp2Component implements OnInit {
     if(this.compteur < 10) {
       this.inGame = true;
 
+      this.tabPropose[0] = this.color1;
+      this.tabPropose[1] = this.color2;
+      this.tabPropose[2] = this.color3;
+      this.tabPropose[3] = this.color4;
+
+
+
+      this.tabSoluce[0] = this.soluce1;
+      this.tabSoluce[1] = this.soluce2;
+      this.tabSoluce[2] = this.soluce3;
+      this.tabSoluce[3] = this.soluce4;
+
+
       for(let i = 0; i < this.tabPropose.length; i++){
         this.tabPropose[i].status = undefined;
         this.tabSoluce[i].status = undefined;
@@ -99,6 +117,21 @@ export class Tp2Component implements OnInit {
           this.tabSoluce[i].status = 'correct';
         } else {
           this.tabPropose[i].status = 'false';
+        }
+      }
+
+      for(let i = 0; i < this.tabPropose.length; i++){
+        if(this.tabPropose[i].status == 'false'){
+          let stop = false;
+
+          for (let e = 0; e < this.tabSoluce.length; e++) {
+            if((this.tabSoluce[e].status == undefined) && (this.tabSoluce[e].color == this.tabPropose[i].color) && !stop){
+              this.tabPropose[i].status = 'uncorrect';
+              this.tabSoluce[e].status = 'uncorrect';
+              stop = true;
+            }
+            
+          }
         }
       }
 

@@ -33,10 +33,12 @@
     <p>Votre dernière combinaison :</p>
     <table class="tab">
         <tr class="ligne">
-            <td [ngStyle]=" { 'background-color' : lastProp1.color } " > {{ lastProp1.color }} </td>
-            <td [ngStyle]=" { 'background-color' : lastProp2.color } " > {{ lastProp2.color }} </td>
-            <td [ngStyle]=" { 'background-color' : lastProp3.color } " > {{ lastProp3.color }} </td>
-            <td [ngStyle]=" { 'background-color' : lastProp4.color } " > {{ lastProp4.color }} </td>
+            <td *ngFor="let prop of tabPropose " [ngStyle]=" { 'background-color' : prop.color } "
+            [ngClass]="{
+                'correct' : prop.status == 'correct',
+                'uncorrect': prop.status == 'uncorrect',
+                'false' : prop.status == 'false' }" 
+            > {{ prop.color }} </td>
         </tr>
     </table>
 </div>
@@ -70,18 +72,22 @@
             <td [ngStyle]="{'background-color': color1.color}"
                 [ngClass]="{
                 'correct' : color1.status == 'correct',
+                'uncorrect': color1.status == 'uncorrect',
                 'false' : color1.status == 'false' }">Couleur 1</td>
             <td [ngStyle]="{'background-color': color2.color}"
                 [ngClass]="{
                 'correct' : color2.status == 'correct', 
+                'uncorrect': color2.status == 'uncorrect',
                 'false' : color2.status == 'false'}">Couleur 2</td>
             <td [ngStyle]="{'background-color': color3.color}"
                 [ngClass]="{
                 'correct' : color3.status == 'correct', 
+                'uncorrect': color3.status == 'uncorrect',
                 'false' : color3.status == 'false'}">Couleur 3</td>
             <td [ngStyle]="{'background-color': color4.color}"
                 [ngClass]="{
                 'correct' : color4.status == 'correct', 
+                'uncorrect': color4.status == 'uncorrect',
                 'false' : color4.status == 'false'}">Couleur 4</td>
         </tr>
         <tr class="ligne">
