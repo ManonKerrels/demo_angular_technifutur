@@ -1,3 +1,14 @@
 h4 {
     color: brown;
 }
+
+form .ng-invalid {
+    border: 1px solid red;
+}
+
+.required-field {
+    color: red;
+    font-style: italic;
+    font-size: smaller;
+    margin-top: 0;
+}

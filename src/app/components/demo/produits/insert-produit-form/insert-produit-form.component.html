@@ -5,11 +5,13 @@
     <div>
         <label for="produit-marque">Marque</label><br>
         <input type="text" id="produit-marque" formControlName="marque">
+        <p *ngIf="produitInsertForm.controls['marque'].errors?.['required']" class="required-field">requis</p>
     </div>
 
     <div>
         <label for="produit-modele">Modèle</label><br>
         <input type="text" id="produit-modele" formControlName="modele">
+        <p *ngIf="produitInsertForm.controls['modele'].errors?.['required']" class="required-field">requis</p>
     </div>
 
     <div>
@@ -20,6 +22,9 @@
     <div>
         <label for="produit-stock">Stock</label><br>
         <input type="number" id="produit-stock" formControlName="stock">
+        <p *ngIf="produitInsertForm.controls['stock'].errors?.['pair']" class="required-field">
+            {{ produitInsertForm.controls['stock'] .errors?.['pair'].message}}
+        </p>
     </div>
 
     <div>
@@ -28,4 +33,7 @@
 
     <button type="submit">Insérer</button>
     <br>
+    <p *ngIf="produitInsertForm.errors?.['priceDoubleStock']" class="required-field">
+        {{ produitInsertForm.errors?.['priceDoubleStock'].message }}
+    </p>
 </form>
