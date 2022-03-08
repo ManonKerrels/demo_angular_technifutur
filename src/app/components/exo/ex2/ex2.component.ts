@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Produit } from 'src/app/models/produit.model';
 
 @Component({
   selector: 'app-ex2',

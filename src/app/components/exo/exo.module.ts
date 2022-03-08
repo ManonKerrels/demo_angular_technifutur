@@ -16,6 +16,8 @@ import { Tp2Component } from './tp2/tp2.component';
 import { Exo3Component } from './exo3/exo3.component';
 import { EnfantAjoutComponent } from './exo3/enfant-ajout/enfant-ajout.component';
 import { EnfantItemComponent } from './exo3/enfant-item/enfant-item.component';
+import { MenuComponent } from './ex2/menu/menu.component';
+import { PanierComponent } from './ex2/panier/panier.component';
 
 
 
@@ -33,7 +35,9 @@ import { EnfantItemComponent } from './exo3/enfant-item/enfant-item.component';
     Tp2Component,
     Exo3Component,
     EnfantAjoutComponent,
-    EnfantItemComponent
+    EnfantItemComponent,
+    MenuComponent,
+    PanierComponent
   ],
   imports: [
     CommonModule,
