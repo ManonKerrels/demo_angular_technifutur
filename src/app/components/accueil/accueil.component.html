@@ -1,3 +1,17 @@
 <h2>Bonjour !</h2>
 
 <p>Bienvenue sur le site de test d'Angular (Single Page Application)</p>
+
+<form [formGroup]="connexionForm" (ngSubmit)="onSubmit()">
+    <div>
+        <label for="">Username </label><br>
+        <input type="text" id="connect-user" formControlName="username">
+    </div>
+
+    <div>
+        <label for="">Password </label><br>
+        <input type="text" id="connect-pass" formControlName="password">
+    </div>
+
+    <button type="submit">Envoyer</button>
+</form>

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Produit } from 'src/app/models/produit.model';
+import { ConnexionService } from 'src/app/services/connexion.service';
 
 @Component({
   selector: 'app-produits',
@@ -32,7 +33,11 @@ export class ProduitsComponent implements OnInit {
       }
   ]
 
-  constructor() { }
+  constructor(private service: ConnexionService) { }
+
+  isConnected(){
+    return this.service.isConnected;
+  }
 
   ngOnInit(): void {
   }
