@@ -3,6 +3,12 @@ h3 {
     text-decoration-line: underline;
 }
 
-/* .ng-touched {
-    background-color: aqua;
-} */
+input.ng-touched {
+    background-color: rgb(148, 193, 233);
+}
+
+/* 
+dirty / pristine
+touched / untouched
+invalid / valid
+*/
