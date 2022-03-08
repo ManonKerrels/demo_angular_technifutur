@@ -12,6 +12,7 @@
         <label for="produit-modele">Modèle</label><br>
         <input type="text" id="produit-modele" formControlName="modele">
         <p *ngIf="produitInsertForm.controls['modele'].errors?.['required']" class="required-field">requis</p>
+
     </div>
 
     <div>
@@ -35,5 +36,8 @@
     <br>
     <p *ngIf="produitInsertForm.errors?.['priceDoubleStock']" class="required-field">
         {{ produitInsertForm.errors?.['priceDoubleStock'].message }}
+    </p>
+    <p *ngIf="produitInsertForm.errors?.['twoFirstLetter']" class="required-field">
+        {{ produitInsertForm.errors?.['twoFirstLetter'].message }}
     </p>
 </form>
