@@ -13,10 +13,13 @@
     <p>Dernier nom validé : {{lastNomValide}} </p>
 </div>
 
-<p>Réponse (service Objectif) :</p>
-<p> {{ recupObjGroup }}</p>
+<div class="obj">
+    <p (ngStyle)=" { 'background-color': recupColorBool == true ? 'recupColor' : 'white' } ">Réponse (service Objectif) :</p>
+<p *ngIf="recupObjBool" > Bonjour {{ recupObjGroup }} !</p>
 
+<button (click)="getResponse()">Récupérer pseudo</button>
+<button (click)="changeColor()">Votre bannière</button>
+</div>
 
-<button (click)="getResponse()">Récupérer</button>
 
 <router-outlet></router-outlet>

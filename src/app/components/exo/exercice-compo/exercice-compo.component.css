@@ -2,3 +2,8 @@ h3 {
     color: burlywood;
 }
 
+.obj {
+    text-align: center;
+    border: dotted 2px sienna;
+    padding: 1%;
+}

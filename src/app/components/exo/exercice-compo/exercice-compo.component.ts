@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ColorChangeService } from 'src/app/services/color-change.service';
 import { RecupObjService } from 'src/app/services/recup-obj.service';
 
 @Component({
@@ -9,13 +10,19 @@ import { RecupObjService } from 'src/app/services/recup-obj.service';
 export class ExerciceCompoComponent implements OnInit {
 
   recupObjGroup: string = "";
+  recupColor: string = "";
+  recupObjBool: boolean = false;
+  recupColorBool: boolean = false;
 
   nom: string = "";
   nbrValide: number = 0;
   tentValidation: number = 0;
   lastNomValide ?: string;
 
-  constructor(private service: RecupObjService) {}
+  constructor(private service: RecupObjService, private servColor: ColorChangeService) {
+    service.obsObjectif.subscribe(info => this.recupObjGroup = info);
+    servColor.colorChange.subscribe(info => this.recupColor = info);
+   }
 
   ngOnInit(): void {
   }
@@ -48,6 +55,12 @@ export class ExerciceCompoComponent implements OnInit {
 
   getResponse(){
     this.recupObjGroup = this.service.getObjectif();
+    this.recupObjBool = true;
+  }
+
+  changeColor(){
+    this.recupColor = this.servColor.getColor();
+    this.recupColorBool = true;
   }
 
 }
