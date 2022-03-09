@@ -17,6 +17,7 @@ import { Exo3Component } from './exo3/exo3.component';
 import { EnfantAjoutComponent } from './exo3/enfant-ajout/enfant-ajout.component';
 import { EnfantItemComponent } from './exo3/enfant-item/enfant-item.component';
 import { PanierComponent } from './panier/panier.component';
+import { ObjectifComponent } from './objectif/objectif.component';
 
 
 
@@ -36,6 +37,7 @@ import { PanierComponent } from './panier/panier.component';
     EnfantAjoutComponent,
     EnfantItemComponent,
     PanierComponent,
+    ObjectifComponent,
   ],
   imports: [
     CommonModule,

@@ -10,6 +10,7 @@ import { Exo3Component } from './exo3/exo3.component';
 import { ParentCommuComponent } from './parent-commu/parent-commu.component';
 import { Tp2Component } from './tp2/tp2.component';
 import { PanierComponent } from './panier/panier.component';
+import { ObjectifComponent } from './objectif/objectif.component';
 
 const routes: Routes = [
   { path:"", component:ExoComponent, children:[
@@ -21,7 +22,8 @@ const routes: Routes = [
     { path:'parent', component: ParentCommuComponent },
     { path:'exoForm', component: ExoFormComponent },
     { path: 'exo3', component: Exo3Component },
-    { path:'tp2', component: Tp2Component }
+    { path:'tp2', component: Tp2Component },
+    { path:'obj', component: ObjectifComponent }
   ] }
 ];
 @NgModule({

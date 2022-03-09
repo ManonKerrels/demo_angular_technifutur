@@ -1,4 +1,5 @@
-import { Component, ElementRef, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { RecupObjService } from 'src/app/services/recup-obj.service';
 
 @Component({
   selector: 'app-exercice-compo',
@@ -7,12 +8,14 @@ import { Component, ElementRef, OnInit } from '@angular/core';
 })
 export class ExerciceCompoComponent implements OnInit {
 
+  recupObjGroup: string = "";
+
   nom: string = "";
   nbrValide: number = 0;
   tentValidation: number = 0;
   lastNomValide ?: string;
 
-  constructor() {}
+  constructor(private service: RecupObjService) {}
 
   ngOnInit(): void {
   }
@@ -41,6 +44,10 @@ export class ExerciceCompoComponent implements OnInit {
       this.tentValidation = 0;
       this.nbrValide = 0;
     }
+  }
+
+  getResponse(){
+    this.recupObjGroup = this.service.getObjectif();
   }
 
 }
