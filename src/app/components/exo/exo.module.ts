@@ -3,7 +3,7 @@ import { CommonModule } from '@angular/common';
 import { ExerciceCompoComponent } from './exercice-compo/exercice-compo.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ExoRoutingModule } from './exo-routing.module';
-import { Ex2Component } from './ex2/ex2.component';
+import { Ex2Component } from './menu/ex2.component';
 import { ExoComponent } from './exo.component';
 import { ChronoComponent } from './chrono/chrono.component';
 import { SharedModule } from 'src/app/shared/shared.module';
@@ -16,8 +16,7 @@ import { Tp2Component } from './tp2/tp2.component';
 import { Exo3Component } from './exo3/exo3.component';
 import { EnfantAjoutComponent } from './exo3/enfant-ajout/enfant-ajout.component';
 import { EnfantItemComponent } from './exo3/enfant-item/enfant-item.component';
-import { MenuComponent } from './ex2/menu/menu.component';
-import { PanierComponent } from './ex2/panier/panier.component';
+import { PanierComponent } from './panier/panier.component';
 
 
 
@@ -36,8 +35,7 @@ import { PanierComponent } from './ex2/panier/panier.component';
     Exo3Component,
     EnfantAjoutComponent,
     EnfantItemComponent,
-    MenuComponent,
-    PanierComponent
+    PanierComponent,
   ],
   imports: [
     CommonModule,
