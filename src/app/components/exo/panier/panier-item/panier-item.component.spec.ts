@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { Ex2Component } from './ex2.component';
+import { PanierItemComponent } from './panier-item.component';
 
-describe('Ex2Component', () => {
-  let component: Ex2Component;
-  let fixture: ComponentFixture<Ex2Component>;
+describe('PanierItemComponent', () => {
+  let component: PanierItemComponent;
+  let fixture: ComponentFixture<PanierItemComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ Ex2Component ]
+      declarations: [ PanierItemComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(Ex2Component);
+    fixture = TestBed.createComponent(PanierItemComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

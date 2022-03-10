@@ -3,7 +3,6 @@ import { CommonModule } from '@angular/common';
 import { ExerciceCompoComponent } from './exercice-compo/exercice-compo.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ExoRoutingModule } from './exo-routing.module';
-import { Ex2Component } from './menu/ex2.component';
 import { ExoComponent } from './exo.component';
 import { ChronoComponent } from './chrono/chrono.component';
 import { SharedModule } from 'src/app/shared/shared.module';
@@ -16,15 +15,18 @@ import { Tp2Component } from './tp2/tp2.component';
 import { Exo3Component } from './exo3/exo3.component';
 import { EnfantAjoutComponent } from './exo3/enfant-ajout/enfant-ajout.component';
 import { EnfantItemComponent } from './exo3/enfant-item/enfant-item.component';
-import { PanierComponent } from './panier/panier.component';
 import { ObjectifComponent } from './objectif/objectif.component';
+import { HttpClientModule } from '@angular/common/http';
+import { MenuComponent } from './menu/menu.component';
+import { MenuItemComponent } from './menu/menu-item/menu-item.component';
+import { PanierComponent } from './panier/panier.component';
+import { PanierItemComponent } from './panier/panier-item/panier-item.component';
 
 
 
 @NgModule({
   declarations: [
     ExerciceCompoComponent,
-    Ex2Component,
     ExoComponent,
     ChronoComponent,
     ExoProduitComponent,
@@ -36,15 +38,19 @@ import { ObjectifComponent } from './objectif/objectif.component';
     Exo3Component,
     EnfantAjoutComponent,
     EnfantItemComponent,
-    PanierComponent,
     ObjectifComponent,
+    MenuComponent,
+    MenuItemComponent,
+    PanierComponent,
+    PanierItemComponent,
   ],
   imports: [
     CommonModule,
     FormsModule,
     ExoRoutingModule,
     SharedModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HttpClientModule
   ]
 })
 export class ExoModule { }

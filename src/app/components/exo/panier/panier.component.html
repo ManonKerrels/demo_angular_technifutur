@@ -1,6 +1,5 @@
-<h3>Panier</h3>
+<h3>panier</h3>
 
 <div>
-    {{recupMenu}}<br>
-    <button type="submit" (click)="getMenu()">Récupérer panier</button>
+    <app-panier-item *ngFor="let item of list" [panierItem]="item" (delete)="onDelete(item)"></app-panier-item>
 </div>

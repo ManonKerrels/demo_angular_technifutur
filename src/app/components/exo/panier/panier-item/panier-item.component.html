@@ -1,0 +1,27 @@
+<div>
+    
+    <div class="item-info">
+        <div class="info-label"><label for="">nom</label></div>
+        <input type="text" disabled [value]="panierItem?.plat?.nom">
+    </div>
+    <div class="item-info">
+        <div><label for="">type</label></div>
+        <input type="text" disabled [value]="panierItem?.plat?.type">
+    </div>
+    <div class="item-info">
+        <div><label for="">price</label></div>
+        <input type="text" disabled [value]="panierItem?.plat?.prix">
+    </div>
+    <div class="item-info">
+        <div><label for="">qtt</label></div>
+        <input type="text" disabled #qttInput [(ngModel)]="panierItem.qtt">
+        <button  (click)="qttInput.disabled = !qttInput.disabled">{{ qttInput.disabled ? 'modifier' : 'confirmer' }}</button>
+    </div>
+
+    <button (click)="toggleConfirmation()" class="red-btn" *ngIf="!deleteConfirmation; else confirmBtn">supprimer</button>
+    <ng-template #confirmBtn>
+        <button (click)="delete()" class="green-btn">confirmer</button>
+        <button (click)="toggleConfirmation()" class="red-btn">annuler</button>
+    </ng-template>
+    
+</div>

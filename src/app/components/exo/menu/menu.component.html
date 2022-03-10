@@ -1,0 +1,13 @@
+<h3>Menu</h3>
+
+<div class="menu-container">
+    <div>
+        <app-menu-item *ngFor="let plat of menu" [plat]="plat" (add-to-panier)="onAdd($event)"></app-menu-item>
+    </div>
+
+    <div>
+        <app-panier></app-panier>
+        <!-- <app-panier></app-panier>    -->
+    </div>
+    
+</div>

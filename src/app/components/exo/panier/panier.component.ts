@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { Produit } from 'src/app/models/produit.model';
-import { MenuService } from 'src/app/services/menu.service';
+import { PanierItem } from 'src/app/models/panier-item.model';
+import { PanierService } from 'src/app/services/panier.service';
 
 @Component({
   selector: 'app-panier',
@@ -9,20 +9,19 @@ import { MenuService } from 'src/app/services/menu.service';
 })
 export class PanierComponent implements OnInit {
 
-  recupMenu: Produit;
-  recupBool: boolean = false;
+  list!: PanierItem[];
 
-  constructor(private service: MenuService) {
-    this.recupMenu = service.getMenu();
-    service.menuChoose.subscribe(info => this.recupMenu = info);
-   }
+  constructor(private service: PanierService) { 
+    // this.list = service.getPanier();
+    service.getPanierChanged().subscribe((panier) => this.list = panier);
+  }
 
   ngOnInit(): void {
   }
 
-  getMenu(){
-    // alert("Panier récupéré !");
-    this.service.getMenu();
+  onDelete(item: PanierItem){
+    this.service.removeFromCart(item.plat);
+    // this.list = this.service.getPanier(); // TODO: effectivement on n'en a maintenant plus besoin
   }
 
 }
