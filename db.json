@@ -1,0 +1,28 @@
+{
+    "plats":[
+        {
+            "id": 1,
+            "nom": "pate",
+            "type": "plat",
+            "prix": 8
+        },
+        {
+            "id": 2,
+            "nom": "pizza",
+            "type": "plat",
+            "prix": 10
+        },
+        {
+            "id": 3,
+            "nom": "croquettes",
+            "type": "entree",
+            "prix": 6
+        },
+        {
+            "id": 4,
+            "nom": "glace",
+            "type": "dessert",
+            "prix": 4
+        }
+    ]
+}

@@ -6,6 +6,7 @@ import { DemoDirectiveComponent } from './demo-directive/demo-directive.componen
 import { DemoFormsComponent } from './demo-forms/demo-forms.component';
 import { DemoPipeComponent } from './demo-pipe/demo-pipe.component';
 import { DemoComponent } from './demo.component';
+import { ObsDemoComponent } from './obs-demo/obs-demo.component';
 import { ProduitsComponent } from './produits/produits.component';
 
 const routes: Routes = [
@@ -15,7 +16,8 @@ const routes: Routes = [
       { path: 'directive', component:DemoDirectiveComponent },
       { path:'demoCommu', component:DemoCommuComponent },
       { path:'demoForms', component:DemoFormsComponent },
-      { path: 'demoProduit', component: ProduitsComponent }
+      { path: 'demoProduit', component: ProduitsComponent },
+      { path: 'obs', component: ObsDemoComponent }
     ] }
 ];
 

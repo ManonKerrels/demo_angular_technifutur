@@ -18,6 +18,7 @@ import { ProduitsComponent } from './produits/produits.component';
 import { InsertProduitFormComponent } from './produits/insert-produit-form/insert-produit-form.component';
 import { ListProduitsComponent } from './produits/list-produits/list-produits.component';
 import { ListProduitsItemComponent } from './produits/list-produits/list-produits-item/list-produits-item.component';
+import { ObsDemoComponent } from './obs-demo/obs-demo.component';
 
 
 
@@ -37,7 +38,8 @@ import { ListProduitsItemComponent } from './produits/list-produits/list-produit
     ProduitsComponent,
     InsertProduitFormComponent,
     ListProduitsComponent,
-    ListProduitsItemComponent
+    ListProduitsItemComponent,
+    ObsDemoComponent
   ],
   imports: [
     CommonModule,
