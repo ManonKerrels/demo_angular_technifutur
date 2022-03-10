@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { Plat } from 'src/app/models/plat.model';
 import { PanierService } from 'src/app/services/panier.service';
@@ -11,6 +11,10 @@ import { menuValidator, MENU_INSERT_FORM, modeleMarqueValidator, PRODUIT_INSERT_
 })
 export class AjoutComponent implements OnInit {
 
+  @Output
+  ('plat-sent')
+  platSent = new EventEmitter<Plat>();
+
   form = new FormGroup({
     'nom': new FormControl(undefined),
     'type': new FormControl(undefined),
@@ -18,9 +22,9 @@ export class AjoutComponent implements OnInit {
   })
 
   constructor(private service: PanierService, builder: FormBuilder) {
-    this.form = builder.group(MENU_INSERT_FORM, {
-      validators: menuValidator
-    })
+    // this.form = builder.group(MENU_INSERT_FORM, {
+    //   validators: menuValidator
+    // })
    };
 
   ngOnInit(): void {

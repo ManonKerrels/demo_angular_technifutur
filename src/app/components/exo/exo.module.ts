@@ -51,8 +51,7 @@ import { AjoutComponent } from './ajout/ajout.component';
     FormsModule,
     ExoRoutingModule,
     SharedModule,
-    ReactiveFormsModule,
-    HttpClientModule
+    ReactiveFormsModule
   ]
 })
 export class ExoModule { }

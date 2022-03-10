@@ -10,9 +10,8 @@ export const PRODUIT_INSERT_FORM = {
 };
 
 export const MENU_INSERT_FORM = {
-    'id': [undefined, [Validators.min(0), Validators.max(50)]],
-    'nom': [undefined, [Validators.minLength(2), Validators.maxLength(30)]],
-    'type': [undefined, [Validators.minLength(2), Validators.maxLength(30)]],
+    'nom': ['', [Validators.minLength(2), Validators.maxLength(30)]],
+    'type': ['', [Validators.minLength(2), Validators.maxLength(30)]],
     'prix': [0, [Validators.min(1), Validators.max(50)]]
 }
 
