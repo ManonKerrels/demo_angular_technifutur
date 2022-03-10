@@ -1,5 +1,6 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { Produit } from 'src/app/models/produit.model';
+import { MenuService } from 'src/app/services/menu.service';
 
 @Component({
   selector: 'app-ex2',
@@ -7,6 +8,10 @@ import { Produit } from 'src/app/models/produit.model';
   styleUrls: ['./ex2.component.css']
 })
 export class Ex2Component implements OnInit {
+
+  recupMenu: Produit;
+
+  
 
   listProduit: Produit[] = [{
     marque: 'Merdouille',
@@ -26,13 +31,22 @@ export class Ex2Component implements OnInit {
   }
 ];
 
-  constructor() { }
+  constructor(private service: MenuService) {
+    this.recupMenu = service.getMenu();
+    service.menuChoose.subscribe(info => this.recupMenu = info);
+   }
 
   ngOnInit(): void {
   }
 
   onSubmitted(){}
 
-  ajout(){}
+  ajout(){
+    this.service.changeMenu(this.recupMenu);
+  }
+  
+  getMenu(){
+    this.service.getMenu();
+  }
 
 }

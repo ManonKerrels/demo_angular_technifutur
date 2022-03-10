@@ -1,7 +1,7 @@
 <h3>Menu</h3>
 
 <div>
-    <p *ngFor="let produit of listProduit">
+    <p class="produit" *ngFor="let produit of listProduit">
         Id : {{ produit.id }} |
         Marque : {{ produit.marque }} |
         Modèle : {{ produit.modele }} |
@@ -11,6 +11,8 @@
 
         <button type="submit" (click)="ajout()" >Ajouter</button>
     </p>
+
+    <app-panier></app-panier>
 
 </div>
 
