@@ -9,10 +9,14 @@ import { RecupObjService } from 'src/app/services/recup-obj.service';
 })
 export class ObjectifComponent implements OnInit {
 
+  recupColor: string = "";
   response: string = "";
   color: string = "";
 
-  constructor(private service: RecupObjService, private servColor: ColorChangeService) {}
+  constructor(private service: RecupObjService, private servColor: ColorChangeService) {
+    this.recupColor = this.servColor.getColor();
+    servColor.colorChange.subscribe(info => this.recupColor = info);
+  }
 
   ngOnInit(): void {
   }
@@ -22,6 +26,7 @@ export class ObjectifComponent implements OnInit {
   }
 
   swap(){
+    // let c = this.servColor.getColor() == 'red' ? 'blue' : 'red';
     this.servColor.changeColor(this.color);
   }
 

@@ -9,10 +9,10 @@ import { RecupObjService } from 'src/app/services/recup-obj.service';
 })
 export class ExerciceCompoComponent implements OnInit {
 
-  recupObjGroup: string = "";
+  color: string = "";
   recupColor: string = "";
+  recupObjGroup: string = "";
   recupObjBool: boolean = false;
-  recupColorBool: boolean = false;
 
   nom: string = "";
   nbrValide: number = 0;
@@ -20,8 +20,8 @@ export class ExerciceCompoComponent implements OnInit {
   lastNomValide ?: string;
 
   constructor(private service: RecupObjService, private servColor: ColorChangeService) {
+    this.recupColor = this.servColor.getColor();
     service.obsObjectif.subscribe(info => this.recupObjGroup = info);
-    servColor.colorChange.subscribe(info => this.recupColor = info);
    }
 
   ngOnInit(): void {
@@ -58,9 +58,9 @@ export class ExerciceCompoComponent implements OnInit {
     this.recupObjBool = true;
   }
 
-  changeColor(){
-    this.recupColor = this.servColor.getColor();
-    this.recupColorBool = true;
+  swap(){
+    // let c = this.servColor.getColor() == 'red' ? 'blue' : 'red';
+    this.servColor.changeColor(this.color);
   }
 
 }

@@ -1,11 +1,11 @@
 <h3>Exercice service</h3>
 
 <div>
-    <p>Encoder votre pseudo de héros : </p>
+    <p >Encoder votre pseudo de héros : </p>
     <input type="text" [(ngModel)]="response"><br>
     <button (click)="onClick()">Envoyer</button>
     <br>
-    <p>Et choisissez la couleur de votre bannière : </p>
+    <p [ngStyle]="{ 'background-color': recupColor }">Et choisissez la couleur de votre bannière : </p>
     <input type="color" id="color" [(ngModel)]="color"><br>
     <button (click)="swap()">Pour la horde !</button>
    

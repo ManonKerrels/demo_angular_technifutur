@@ -14,11 +14,10 @@
 </div>
 
 <div class="obj">
-    <p (ngStyle)=" { 'background-color': recupColorBool == true ? 'recupColor' : 'white' } ">Réponse (service Objectif) :</p>
-<p *ngIf="recupObjBool" > Bonjour {{ recupObjGroup }} !</p>
+    <p>Réponse (service Objectif) :</p>
+<p *ngIf="recupObjBool" [ngStyle]="{ 'background-color': recupColor }" > Bonjour {{ recupObjGroup }} !</p>
 
-<button (click)="getResponse()">Récupérer pseudo</button>
-<button (click)="changeColor()">Votre bannière</button>
+<button (click)="getResponse()">Récupérer pseudo</button><br>
 </div>
 
 
