@@ -21,6 +21,7 @@ import { MenuComponent } from './menu/menu.component';
 import { MenuItemComponent } from './menu/menu-item/menu-item.component';
 import { PanierComponent } from './panier/panier.component';
 import { PanierItemComponent } from './panier/panier-item/panier-item.component';
+import { AjoutComponent } from './ajout/ajout.component';
 
 
 
@@ -43,6 +44,7 @@ import { PanierItemComponent } from './panier/panier-item/panier-item.component'
     MenuItemComponent,
     PanierComponent,
     PanierItemComponent,
+    AjoutComponent,
   ],
   imports: [
     CommonModule,

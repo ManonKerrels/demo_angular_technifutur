@@ -2,7 +2,7 @@ import { Component, OnInit, Output } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, MinLengthValidator, Validators } from '@angular/forms';
 import { EventEmitter } from '@angular/core';
 import { Produit } from 'src/app/models/produit.model';
-import { priceDoubleStock, PRODUIT_INSERT_FORM, twoFirstLetter } from 'src/app/components/Forms/produit.form';
+import { priceDoubleStock, PRODUIT_INSERT_FORM, modeleMarqueValidator } from 'src/app/components/Forms/produit.form';
 
 @Component({
   selector: 'app-insert-produit-form',
@@ -25,7 +25,7 @@ export class InsertProduitFormComponent implements OnInit {
 
   constructor(builder: FormBuilder) {
     this.produitInsertForm = builder.group(PRODUIT_INSERT_FORM, {
-      validators: [priceDoubleStock, twoFirstLetter]
+      validators: [priceDoubleStock, modeleMarqueValidator]
     });
    }
 

@@ -1,0 +1,23 @@
+<h4>Ajout d'un plat</h4>
+
+<form [formGroup]="form" (ngSubmit)="onSubmit()">
+    <div>
+        <label for="input-nom">Nom </label>
+        <input type="text" id="input-nom">
+    </div>
+    <div>
+        <label for="input-type">Type </label>
+        <input type="text" id="input-type">
+        
+    </div>
+    <div>
+        <label for="input-prix">Prix </label>
+        <input type="number" id="input-prix">
+    </div>
+
+    <p *ngIf="form.controls['type'].errors?.['menuValidator']" class="required-field">
+        {{ form.controls['type'].errors?.['menuValidator'].message }}
+    </p>
+
+    <button type="submit">Et un de plus !</button>
+</form>
