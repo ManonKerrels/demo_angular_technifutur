@@ -5,3 +5,9 @@
 .menu-container > div {
     width: 50%;
 }
+
+.plats {
+    border: 1px solid black;
+    padding: 1%;
+    margin: 2%;
+}

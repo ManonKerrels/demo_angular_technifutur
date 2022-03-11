@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, ActivatedRouteSnapshot } from '@angular/router';
+import { ActivatedRoute, ActivatedRouteSnapshot, Router } from '@angular/router';
+import { Plat } from 'src/app/models/plat.model';
 import { PlatService } from 'src/app/services/plat-service.service';
 
 @Component({
@@ -9,14 +10,18 @@ import { PlatService } from 'src/app/services/plat-service.service';
 })
 export class PlatComponent implements OnInit {
 
+  plat!: Plat;
   id: number;
 
-  constructor(route: ActivatedRouteSnapshot, private platService: PlatService) {
-    const param_id = route.paramMap.get('id');
+  constructor(route: ActivatedRoute, private platService: PlatService, router: Router) {
+    const param_id = route.snapshot.paramMap.get('id');
     this.id = param_id ? parseInt(param_id) : -1;
 
     if(this.id && this.id > 0){
-      platService.getPlat(this.id);
+      platService.getPlat(this.id).subscribe({
+        next: (plat) => this.plat = plat,
+        error: (err) => router.navigateByUrl('menu')
+      })
     }
    }
 

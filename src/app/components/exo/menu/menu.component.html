@@ -8,7 +8,7 @@
 
     <ng-template #menuContainer>
         <div class="menu-container">
-            <div *ngFor="let plat of menu">
+            <div *ngFor="let plat of menu" class="plats">
                 <app-menu-item [plat]="plat" (add-to-panier)="onAdd($event)"></app-menu-item>
             </div>
         </div>

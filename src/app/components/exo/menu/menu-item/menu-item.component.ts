@@ -25,7 +25,7 @@ export class MenuItemComponent implements OnInit {
   }
 
   onDetails(){
-    this.router.navigate(['/plat', this.plat.id]);
+    this.router.navigate(['exo', 'plat', this.plat.id]);
     // this.router.navigateByUrl('plat/'+this.plat.id);
   }
 
