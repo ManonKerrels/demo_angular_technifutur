@@ -1,13 +1,22 @@
 <h3>Menu</h3>
+<button (click)="toggleAdding()">{{ adding ? 'annuler' : 'ajouter un plat' }}</button>
+<div class="menu-display">
 
-<div class="menu-container">
-    <div>
-        <app-menu-item *ngFor="let plat of menu" [plat]="plat" (add-to-panier)="onAdd($event)"></app-menu-item>
+    <div *ngIf="adding; else menuContainer;">
+        <app-ajout (plat-sent)="onAdd($event)"></app-ajout>
     </div>
 
-    <div>
-        <app-panier></app-panier>
-        <app-ajout></app-ajout>
-    </div>
+    <ng-template #menuContainer>
+        <div class="menu-container">
+            <div *ngFor="let plat of menu">
+                <app-menu-item [plat]="plat" (add-to-panier)="onAdd($event)"></app-menu-item>
+            </div>
+        </div>
+
+        <div>
+            <!-- <app-panier></app-panier> -->
+            <app-panier></app-panier>   
+        </div>
+    </ng-template>
     
 </div>

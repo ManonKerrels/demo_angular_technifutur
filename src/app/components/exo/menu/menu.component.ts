@@ -1,4 +1,6 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { HttpClient, HttpRequest } from '@angular/common/http';
+import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { Plat } from 'src/app/models/plat.model';
 import { PanierService } from 'src/app/services/panier.service';
 import { PlatService } from 'src/app/services/plat-service.service';
@@ -12,34 +14,35 @@ export class MenuComponent implements OnInit {
 
   adding: boolean = false;
 
+  menu!: Plat[];
 
-  menu!: Plat[]; 
-
-  constructor(private service: PanierService, private platService: PlatService) {
+  constructor(private service: PanierService, private platService: PlatService, private router: Router) { 
     this.getPlats();
-   }
+  }
 
   ngOnInit(): void {
   }
 
+  onAdd(plat: Plat){
+    this.service.addToCart(plat);
+  }
+
   toggleAdding(){
-    this.adding = !this.adding;
+    this.adding = !this.adding
   }
 
   getPlats(){
-    this.platService.getPlats().subscribe({
-      next: plats => this.menu = plats,
-      error: err => alert('échec'),
-      complete: () => console.log("get plats - completed")
-    });
+    this.platService.getPlats()
+      .subscribe({
+        next: plats => this.menu = plats,
+        error: err => alert("echec"),
+        complete: () => console.log("get plats - completed")
+      });
   }
 
   onPlatSent(plat: Plat){
-    this.platService.onAdd(plat).subscribe(() => this.getPlats());
-  }
-
-  onAdd(plat: Plat){
-    this.service.addToCart(plat);
+    this.platService.onPlatSent(plat)
+      .subscribe(() => this.getPlats())
   }
 
 }

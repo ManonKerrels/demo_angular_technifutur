@@ -11,6 +11,7 @@ import { Tp2Component } from './tp2/tp2.component';
 import { ObjectifComponent } from './objectif/objectif.component';
 import { MenuComponent } from './menu/menu.component';
 import { PanierComponent } from './panier/panier.component';
+import { PlatComponent } from './menu/plat/plat.component';
 
 const routes: Routes = [
   { path:"", component:ExoComponent, children:[
@@ -23,7 +24,8 @@ const routes: Routes = [
     { path:'tp2', component: Tp2Component },
     { path:'obj', component: ObjectifComponent },
     { path: 'menu', component: MenuComponent },
-    { path: 'panier', component: PanierComponent }
+    { path: 'panier', component: PanierComponent },
+    { path: 'plat/:id', component: PlatComponent }
   ] }
 ];
 @NgModule({

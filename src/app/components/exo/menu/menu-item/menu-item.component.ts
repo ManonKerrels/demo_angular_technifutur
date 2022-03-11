@@ -1,4 +1,5 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { Router } from '@angular/router';
 import { Plat } from 'src/app/models/plat.model';
 
 @Component({
@@ -14,13 +15,18 @@ export class MenuItemComponent implements OnInit {
   @Output('add-to-panier')
   addToPanier= new EventEmitter<Plat>()
 
-  constructor() { }
+  constructor(private router: Router) { }
 
   ngOnInit(): void {
   }
 
   onAdd(){
     this.addToPanier.emit(this.plat);
+  }
+
+  onDetails(){
+    this.router.navigate(['/plat', this.plat.id]);
+    // this.router.navigateByUrl('plat/'+this.plat.id);
   }
 
 }

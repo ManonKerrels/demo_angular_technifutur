@@ -11,11 +11,17 @@ export class PlatService {
 
   constructor(private client: HttpClient) { }
 
+  //GET - DELETE
   getPlats(){
     return this.client.get<Plat[]>(this.BASE_URL);
   }
 
-  onAdd(plat: Plat){
+  getPlat(id: number){
+    return this.client.get<Plat>(this.BASE_URL + "/" + id);
+  }
+
+  //POST - PUT - PATCH
+  onPlatSent(plat: Plat){
     return this.client.post<Plat>(this.BASE_URL, plat);
   }
 

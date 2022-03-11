@@ -2,7 +2,7 @@ import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { Plat } from 'src/app/models/plat.model';
 import { PanierService } from 'src/app/services/panier.service';
-import { menuValidator, MENU_INSERT_FORM, modeleMarqueValidator, PRODUIT_INSERT_FORM } from '../../Forms/produit.form';
+import { menuValidator, MENU_INSERT_FORM, modeleMarqueValidator, PRODUIT_INSERT_FORM } from '../../../Forms/produit.form';
 
 @Component({
   selector: 'app-ajout',
@@ -22,9 +22,7 @@ export class AjoutComponent implements OnInit {
   })
 
   constructor(private service: PanierService, builder: FormBuilder) {
-    // this.form = builder.group(MENU_INSERT_FORM, {
-    //   validators: menuValidator
-    // })
+    this.form = builder.group(MENU_INSERT_FORM);
    };
 
   ngOnInit(): void {
@@ -35,11 +33,8 @@ export class AjoutComponent implements OnInit {
   }
 
   onSubmit(){
-    if(this.form.valid){
-      alert('Formulaire envoyé !');
-    } else {
-      console.error('Formulaire invalide');
-    }
+    if( this.form.valid )
+      this.platSent.emit(this.form.value);
   }
 
 }
