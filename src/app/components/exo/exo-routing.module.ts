@@ -12,6 +12,9 @@ import { ObjectifComponent } from './objectif/objectif.component';
 import { MenuComponent } from './menu/menu.component';
 import { PanierComponent } from './panier/panier.component';
 import { PlatComponent } from './menu/plat/plat.component';
+import { Exo4Component } from './exo4/exo4.component';
+import { PairComponent } from './exo4/pair/pair.component';
+import { ImpairComponent } from './exo4/impair/impair.component';
 
 const routes: Routes = [
   { path:"", component:ExoComponent, children:[
@@ -25,7 +28,10 @@ const routes: Routes = [
     { path:'obj', component: ObjectifComponent },
     { path: 'menu', component: MenuComponent },
     { path: 'panier', component: PanierComponent },
-    { path: 'plat/:id', component: PlatComponent }
+    { path: 'plat/:id', component: PlatComponent },
+    { path: 'exo4', component: Exo4Component },
+    { path:'pair/:toto', component: PairComponent },
+    { path:'impair/:dede', component: ImpairComponent }
   ] }
 ];
 @NgModule({

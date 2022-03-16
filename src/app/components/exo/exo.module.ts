@@ -23,6 +23,9 @@ import { PanierComponent } from './panier/panier.component';
 import { PanierItemComponent } from './panier/panier-item/panier-item.component';
 import { AjoutComponent } from './menu/ajout/ajout.component';
 import { PlatComponent } from './menu/plat/plat.component';
+import { Exo4Component } from './exo4/exo4.component';
+import { PairComponent } from './exo4/pair/pair.component';
+import { ImpairComponent } from './exo4/impair/impair.component';
 
 
 
@@ -47,6 +50,9 @@ import { PlatComponent } from './menu/plat/plat.component';
     PanierItemComponent,
     AjoutComponent,
     PlatComponent,
+    Exo4Component,
+    PairComponent,
+    ImpairComponent,
   ],
   imports: [
     CommonModule,
